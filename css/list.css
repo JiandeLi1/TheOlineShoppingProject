@@ -1,0 +1,102 @@
+.clock{
+    position:absolute;
+    left: 180px;
+    top: 30px;
+    color:#62a2f5;
+    font-size: 40px;
+    text-align: center;
+}
+
+.clock p{
+    position:absolute;
+    width: 100px;
+    left: -12px;
+    font-size: 12px;
+    
+    margin-left: 5px;
+}
+
+.clock i{
+    margin-left: -50px;
+}
+
+.clock::before{
+    content: '';
+    float: left;
+    height: 50px;
+    width: 1px;
+    margin-top: 0px;
+    margin-right: 65px;
+    background-color: #62a2f5;
+}
+
+.phone_box{
+    height: 1420px;
+}
+
+.sale_box .phone_box ul li{
+    float: left;
+    overflow: hidden;
+    width: 290px;
+    height: 460px;
+    margin:5px 5px;
+     border: 1px solid transparent;
+}
+
+.sale_box .phone_box ul li:hover{
+    
+    border: 1px solid #62a2f5;
+}
+    
+
+.phone_box ul li .small_box{
+    text-align: center;
+    font-size: 16px;
+}
+
+
+.phone_box ul li .small_box .price{
+    
+    font-size: 18px;
+    font-weight: 600;
+    color: #4f96f3;
+}
+.phone_box ul li .small_box .price span{
+    font-size: 14px;
+    font-weight: 500;
+    color:#666;
+    text-decoration:line-through;
+
+}
+
+.phone_box ul li .small_box .price .sold_percen{
+ text-decoration:none;   
+}
+
+.phone_box ul li .small_box .price .bar{
+    display: inline-block;
+    width: 80px;
+    height: 10px;
+    border: 1px solid #4f96f3;
+    border-radius: 10px;
+
+}
+
+.phone_box ul li .small_box .price .bar>div{
+    width: 85%;
+    height: 8px;
+    text-align: left;
+    background-color: #4f96f3;
+}
+
+.phone_box ul li .small_box button{
+    width: 100%;
+    height: 45px;
+    background-color: #4f96f3;
+}
+
+.phone_box ul li .small_box button a{
+    color: #fff;
+}
+
+

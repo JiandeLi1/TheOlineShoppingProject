@@ -1,0 +1,270 @@
+.w{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.fl{
+    float: left;
+}
+
+.fr{
+    float:right;
+}
+
+
+.style_red{
+    color:#c81623;
+}
+
+.style_bule{
+    color:#567af3;
+}
+
+.shortcut{
+    height: 31px;
+    line-height: 31px;
+    background-color: #f1f1f1;
+}
+
+.shortcut ul li{
+    float: left;
+}
+ 
+
+.shortcut .fr ul li:nth-child(even){
+    height: 12px;
+    width: 1px;
+    margin: 9px 15px;
+    background-color: #666666;
+}
+
+.arrow-icon::after{
+    content: '\25BC';
+}
+
+.header{
+    position: relative;
+    height: 105px;
+
+}
+
+.logo{
+    position: absolute;
+    top: 25px;
+    width: 171px;
+    height: 61px;
+}
+
+.logo a{
+    display: block;
+    width: 171px;
+    height: 61px;
+    font-size: 0;
+    background: url(../images/LOGO.png) no-repeat;
+}
+
+
+.search{
+    position:absolute;
+    left: 346px;
+    top: 25px;
+    width: 538px;
+    height: 36px;
+    border: 2px solid #567af3;
+}
+
+.search input{
+    float: left;
+    width: 455px;
+    height: 32px;
+    padding: 10px;
+}
+
+.search button{
+    float: left;
+    width: 79px;
+    height: 32px;
+    background-color: #567af3;
+}
+
+.hotWords{
+    position: absolute;
+    top:60px;
+    left:346px;
+    float: left;
+    line-height: 32px;
+}
+
+.hotWords a{
+    margin-right: 10px;
+}
+
+.shopCar{
+    position:absolute;
+    top: 25px;
+    right: 60px;
+    width: 180px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border: 1px solid #dfdfdf;
+    border-bottom-color: #f7f7f7;
+    cursor:pointer;
+}
+
+
+.count{
+    position: absolute;
+    top: -6px;
+    left: 158px;
+    height: 14px;
+    line-height: 14px;
+    padding: 0 5px;
+    border-radius: 7px 7px 7px 0px;
+    background-color: #567af3;
+    color:#f7f7f7;
+
+}
+
+.nav{
+    height: 47px;
+    border-bottom: 2px solid #567af3;
+}
+
+.nav .dropdown{
+    float: left;
+    width: 210px;
+    height: 45px;
+    background-color:  #567af3;
+}
+
+.dropdown .dt{
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    text-align: center;
+    line-height: 45px;
+}
+
+.dropdown .dd{
+    width: 210px;
+    height: 465px;
+    background-color: #8ba4f7;
+    margin-top: 2px;
+}
+
+.dropdown .dd ul li{
+    height: 31px;
+    line-height: 31px;
+    margin-left: 2px;
+    padding: 0 10px;
+    color:#fff;
+}
+.dropdown .dd ul li::after{
+    content: '>';
+    float: right;
+}
+
+.dropdown .dd ul li:hover{
+background-color: #fff;
+
+}
+
+.dropdown .dd ul li:hover a{
+color: #8ba4f7;
+}
+
+.navitems ul li{
+    float: left;
+}
+
+    .navitems ul li a{
+        display: block;
+        height: 45px;
+        line-height: 45px;
+        font-size: 16px;
+        padding: 0 20px;
+    }
+
+    .navitems ul li a:hover{
+        color:  #8ba4f7;
+    }
+
+    .footer{
+        height: 415px;
+        background-color: #f5f5f5;
+        padding-top: 30px;
+    }
+
+    .mod_service{
+        height: 80px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .mod_service ul li{
+        float: left;
+        width: 300px;
+        height: 50px;
+    }
+
+    .mod_service ul li i{
+        float: left;
+        width: 55px;
+        height: 55px;
+        font-size: 40px;
+    }
+
+    .mod_service ul li div{
+        float:left;
+        padding-top: 5px;
+    }
+
+    .mod_service ul li div h3{
+        font-weight: 600;
+    }
+    .mod_service ul li div p{
+        padding-top: 5px;
+        font-size:12px;
+    }
+
+    .mod_help{
+        height: 185px;
+        border-bottom: 1px solid #ccc;
+        padding-top:20px;
+        padding-left: 50px;
+    }
+
+    .mod_help dl{
+        float: left;
+        width:270px;
+    }
+
+    .mod_help dl dt{
+        font-size: 16px;
+        margin-bottom: 10px;
+
+    }
+
+    .mod_help dl dd{
+        margin-bottom: 3px;
+    }
+    .mod_help dl dd a{
+        font-size: 12px;
+    }
+
+    .mod_copyRight{
+        text-align: center;
+    }
+
+    .mod_copyRight .links a{
+        padding:0 10px 0px 10px;
+    }
+
+    .copyRight{
+        margin-top: 10px ;
+    }
+
+
+
+
+    

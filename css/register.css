@@ -1,0 +1,112 @@
+.header{
+    border-bottom: 2px solid #e4e4e4;
+}
+
+.register{
+    height: 522px;
+    border: 1px solid #e4e4e4;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.register h3{
+    height: 42px;
+    line-height: 42px;
+    background-color: #ececec;
+    border-bottom: 1px solid #e4e4e4;
+}
+
+.register h3 .title-left{
+    float: left;
+    margin-left: 20px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.register h3 .title-right{
+    float: right;
+    margin-right: 20px;
+}
+
+.register h3 .title-right a{
+    color: #62a2f5;
+}
+
+.register .reg_form{
+    width: 600px;
+    margin: 50px auto 0;
+}
+
+.register .reg_form ul li label{
+    display: inline-block;
+    width: 130px;
+    margin-right: 3px;
+    text-align: right;
+}
+
+.register .reg_form ul li input{
+    width: 242px;
+    height: 37px;
+    margin-bottom: 10px;
+    border: 1px solid #999;
+}
+
+.register .reg_form ul li .error{
+  margin-left: 10px;
+  color: #c81523;
+}
+
+
+.register .reg_form ul .safe{
+    padding-left: 133px;
+    margin-bottom: 10px;
+}
+
+.register .reg_form ul .safe em{
+    padding: 0 12px;
+    color: #fff;
+}
+
+.weak{
+    background-color: #c81523;
+}
+
+.mid{
+    background-color: #f79100;
+}
+
+.strong{
+    background-color: #40b83f;
+}
+
+.register .reg_form ul .agree{
+    padding-left: 137px;
+    margin-top: 30px;
+}
+
+.register .reg_form ul .agree input{
+    height: 12px;
+    width: 12px;
+    padding-top: 3px;  
+}
+
+.register .reg_form ul .agree a em{
+    color:#62a2f5;
+}
+.register .reg_form ul .submit {
+    text-align: center;
+}
+
+.register .reg_form ul .submit input{
+     width:150px;
+     margin-top: 50px;
+     margin-right: 70px;
+     text-align: center;
+     color: #fff;
+     font-weight: 600;
+     background-color: #62a2f5;
+} 
+
+
+
+

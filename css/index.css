@@ -1,0 +1,310 @@
+.main{
+    width: 980px;
+    height: 455px;
+    margin-left: 220px ;
+    margin-top:10px;
+}
+
+.main .focus{
+    float: left;
+    width: 721px;
+    height: 455px;
+}
+
+.main .focus ul li img{
+    width: 100%;
+    height: 100%;
+}
+
+.main .newflash{
+    float: right;
+    width: 250px;
+    height: 455px;
+    /* border: 1px solid #e4e4e4; */
+}
+
+.news{
+    height: 160px;
+    border: 1px solid #e4e4e4;
+    margin-bottom: 5px;
+}
+.bargain img{
+margin-top: 5px;
+}
+
+.leftservice{
+    height: 209px;
+}
+
+
+.news-hd{
+    height: 33px;
+    padding: 0px 15px;
+    line-height: 33px;
+    border-bottom: 1px dotted #e4e4e4;
+}
+
+.news-bd{
+    padding: 5px 15px 0px;
+    /* border-bottom: 1px solid #e4e4e4; */
+}
+
+.news-bd ul li{
+    height: 23px;
+    line-height: 23px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.news-hd h5{
+    float: left;
+    font-size: 14px;
+}
+
+.news-hd a{
+    float: right;
+}
+.leftservice{
+    margin-bottom: 2px;
+}
+
+.leftservice table{
+margin-top: -3px;
+border-color:#e4e4e4;
+border: 1px;
+}
+
+.leftservice table tr td{
+    width: 63px;
+    height: 52px;
+    padding: 4px 0 ;
+    text-align: center;   
+}
+
+.leftservice table tr td i{
+    display: inline-block;
+    width: 24px;
+    height: 25px;
+    background: url(../images/sprite2.jpg) no-repeat -140px -80px;
+}
+
+.focus{
+    position: relative;
+    overflow: hidden;
+}
+
+.focus ul{
+    position:absolute;
+    width: 402%;
+}
+
+.focus ul li{
+    float: left;
+}
+
+.focus ol{
+    position: absolute;
+    top: 410px;
+    left: 50px;
+    padding: 1px;
+    border-radius: 30px;
+    background-color:rgba(0,0,0,0.2); 
+    cursor: pointer;
+}
+
+.focus ol li{
+    float: left;
+    margin: 2px 5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    border: 2px solid #fff;
+}
+
+.current{
+ background-color: #fff;   
+}
+
+
+
+.arrow-l,
+.arrow-r{
+    position:absolute;
+    top:50%;
+    margin-top: -20px;
+    width: 24px;
+    height: 40px;
+    background: rgba(0,0,0,.3);
+    text-align: center;
+    line-height: 40px;
+    color:#fff;
+    font-size: 18px;
+    z-index: 2;
+}
+
+.arrow-l{
+    left: 0;
+    display:none;
+    border-radius: 0 50% 50% 0;
+}
+
+.arrow-r{
+    right: 0;
+    display:none;
+    border-radius: 50% 0 0 50%;
+}
+
+.recom{
+    height: 163px;
+    margin-top: 10px;
+    /* background-color: #efefef; */
+}
+
+.recom_hd{
+    float: left;
+    width: 205px;
+    height: 163px;
+    line-height: 163px;
+    font-size:85px;
+    text-align: center;
+    color: white;
+    background-color: #5c5251;
+}
+
+.recom_hd i{
+    margin-top: 25px;
+}
+.recom_hd i::after{
+    content: 'Latest Recommended';
+    display: block;
+    font-size: 14px;
+}
+
+.recom_bd ul li{
+    float: left;
+    margin-left: 7px;
+}
+
+.recom_bd ul li img{
+    width: 248px;
+    height: 163px;
+}
+
+.recom_bd ul li:nth-child(-n+2)::after{
+    content: "";
+    float: right;
+    display: block;
+    height: 150px;
+    width: 1px;
+    background-color: #bbb;
+    margin-top: 6.5px;
+    margin-left:7px;
+    
+}
+
+
+
+.recom_end{
+ float: right;   
+ width: 203px;
+    height: 163px;
+    line-height: 163px;
+    font-size:85px;
+    text-align: center;
+    color: white;
+    background-color: #5c5251;
+}
+
+.floor{
+    margin-top: 20px;
+}
+
+
+.floor .appliances .appliances_hd{
+    height: 30px;
+    line-height: 30px;
+    color:  #567af3;
+    font-weight: 600;
+    border-bottom: 2px solid #567af3;
+}
+
+.floor .appliances .appliances_hd h3{
+    float: left;
+    font-size: 18px;
+}
+
+.floor .appliances .appliances_hd ul{
+    float:right;
+}
+
+.floor .appliances .appliances_hd ul li{
+    float:left;
+}
+
+.floor .appliances .appliances_hd ul li:nth-child(-n+2)::after{
+    content: "";
+    float: right;
+    display: block;
+    height: 10px;
+    width: 1px;
+    background-color: #bbb;
+    margin: 12px 10px 0px 10px;
+}
+
+
+.floor .appliances .appliances_hd ul li a{
+    font-weight: 500;
+    color:#666;
+}
+
+.appliances_bd{
+    height: 361px;
+    background-color: #f9f9f9;
+}
+
+.tab_list_item>div{
+    float: left;
+}
+
+
+.col_210{
+    width:210px;
+    text-align: center;
+}
+
+.col_210 ul li{
+    float: left; 
+    width: 80px;
+    height: 34px;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    line-height: 33px;
+    margin-right: 10px;
+}
+
+.col_210 ul{
+    margin-left: 12px;
+    padding-bottom: 15px;
+}
+
+.col_210 div img{
+    margin-top: 2px;
+}
+
+.col_329{
+    width: 329px;
+    padding: 4px 2px 2px 2px;
+}
+
+.col_221{
+    width: 221px;
+    padding: 4px 2px 2px 2px;
+}
+
+.col_219{
+    width: 219px;
+    padding: 4px 2px 2px 2px;
+}
+
+
