@@ -29,6 +29,8 @@
 .shortcut ul li{
     float: left;
 }
+
+
  
 
 .shortcut .fr ul li:nth-child(even){
@@ -36,6 +38,33 @@
     width: 1px;
     margin: 9px 15px;
     background-color: #666666;
+}
+
+.shortcut  .fr ul li .drop_down{
+    display: none;
+    position: absolute;
+    left: 1452px;
+    width: 5.5%;
+    z-index: 9;
+    
+}
+
+.shortcut .fr ul li .drop_down>li{
+    float: left;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding:0px 20px;
+    text-align: center;
+    background-color:#f1f1f1;
+    border: 1px solid #ddd;
+    border-width:0px 1px 1px 1px;
+}
+
+.shortcut .fr ul li:last-child:hover
+.drop_down
+{
+display: block;
 }
 
 .arrow-icon::after{
