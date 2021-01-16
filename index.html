@@ -9,12 +9,15 @@
     <meta name="keywords" content="Shopping">
     <title>Shopping -Best Shopping Website-</title>
     <!-- putting icon -->
-    <link rel="shortcut icon" href="./images/icon.ico">
-    <link rel="stylesheet" href="./css/base.css">
-    <link rel="stylesheet" href="./css/common.css">
-    <link rel="stylesheet" href="./css/index.css">
+    <!-- <link rel="shortcut icon" href="/static/images/icon.ico"> -->
+    <link rel="stylesheet" type= "text/css" href="{{ url_for('static',filename='image/icon.ico') }}">
+    <link rel="stylesheet" type= "text/css" href="{{ url_for('static',filename='css/base.css') }}">
+    <link rel="stylesheet" type= "text/css" href="{{ url_for('static',filename='css/common.css') }}">
+    <!-- <link rel="stylesheet" href="/static/css/common.css"> -->
+    <link rel="stylesheet" type= "text/css" href="{{ url_for('static',filename='css/index.css') }}">
+    <!-- <link rel="stylesheet" href="/static/css/index.css"> -->
     <script src="https://kit.fontawesome.com/1d299bbc93.js" crossorigin="anonymous"></script>
-    <script src="./js/index.js"></script>
+    <script src="{{ url_for('static',filename='js/index.js') }}"></script>
 
 </head>
 <body>
@@ -121,16 +124,16 @@
                 <a href="javascript:;" class="arrow-r"><i class="fas fa-angle-right"></i></a>
                 <ul>
                     <li>
-                       <a href="javascript:;"><img src="./upload/1.png" alt=""></a>
+                       <a href="javascript:;"><img src="{{ url_for('static',filename='upload/1.png') }}" alt=""></a>
                     </li>
                     <li>
-                        <a href="javascript:;"><img src="./upload/2.png" alt=""></a>
+                        <a href="javascript:;"><img src="{{ url_for('static',filename='upload/2.png') }}" alt=""></a>
                     </li>
                     <li>
-                        <a href="javascript:;"><img src="./upload/3.png" alt=""></a>
+                        <a href="javascript:;"><img src="{{ url_for('static',filename='upload/3.png') }}" alt=""></a>
                     </li>
                     <li>
-                        <a href="javascript:;"><img src="./upload/1.png" alt=""></a>
+                        <a href="javascript:;"><img src="{{ url_for('static',filename='upload/1.png') }}" alt=""></a>
                     </li>
                 </ul>
                 <ol class="circle">
@@ -185,7 +188,7 @@
                     </table>
                 </div>
                 <div class="bargain">
-                    <a href="javascript:;"><img src="./upload/discount.png" alt=""></a>
+                    <a href="javascript:;"><img src="/static/upload/discount.png" alt=""></a>
                 </div>
             </div>
         </div>
@@ -200,13 +203,13 @@
         <div class="recom_bd">
            <ul>
                <li>
-                <img src="./upload/sample.png" alt="">
+                <img src="/static/upload/sample.png" alt="">
                </li>
                <li>
-                 <img src="./upload/sample.png" alt="">
+                 <img src="/static/upload/sample.png" alt="">
                </li>
                <li>
-                 <img src="./upload/sample.png" alt="">
+                 <img src="/static/upload/sample.png" alt="">
                </li>
            </ul>
         </div>
@@ -244,11 +247,11 @@
                             </div>
                         </div>
                         <div class="col_329">
-                            <img src="./upload/Sample3.png" alt="">
+                            <img src="/static/upload/Sample3.png" alt="">
                         </div>
-                        <div class="col_221"><img src="./upload/Sample4.png" alt=""></div>
-                        <div class="col_221"><img src="./upload/Sample4.png" alt=""></div>
-                        <div class="col_219"><img src="./upload/Sample5.png" alt=""></div>
+                        <div class="col_221"><img src="/static/upload/Sample4.png" alt=""></div>
+                        <div class="col_221"><img src="/static/upload/Sample4.png" alt=""></div>
+                        <div class="col_219"><img src="/static/upload/Sample5.png" alt=""></div>
                     </div>
                 </div>
             </div>
