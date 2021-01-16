@@ -1,0 +1,74 @@
+.header{
+    border-bottom: 2px solid #e4e4e4;
+}
+.login{
+    height: 408px;
+    border: 1px solid #e4e4e4;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.login h3{
+    height: 42px;
+    line-height: 42px;
+    background-color: #ececec;
+    border-bottom: 1px solid #e4e4e4;
+}
+
+.login h3 .title-left{
+    float: left;
+    margin-left: 20px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.login h3 .title-right{
+    float: right;
+    margin-right: 20px;
+}
+
+.login h3 .title-right a{
+    color: #62a2f5;
+}
+
+.login .login_form{
+    width: 600px;
+    margin: 50px auto 0;
+}
+
+.login .login_form ul li label{
+    display: inline-block;
+    width: 130px;
+    margin-right: 3px;
+    text-align: right;
+}
+
+.login .login_form ul li input{
+    width: 242px;
+    height: 37px;
+    margin-bottom: 10px;
+    border: 1px solid #999;
+}
+
+.login .login_form ul li .error{
+  margin-left: 10px;
+  color: #c81523;
+}
+
+
+
+
+
+.login .login_form ul .submit {
+    text-align: center;
+}
+
+.login .login_form ul .submit input{
+     width:150px;
+     margin-top: 50px;
+     margin-right: 70px;
+     text-align: center;
+     color: #fff;
+     font-weight: 600;
+     background-color: #62a2f5;
+} 
