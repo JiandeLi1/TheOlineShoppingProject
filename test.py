@@ -27,6 +27,15 @@ def register():
     else:
         return render_template("register.html",name=None)
 
+@app.route("/login",methods=["POST"])
+def login():
+    if request.method == 'POST':
+        res = requets.form
+        username = res["username"]
+        password = res["password"]
+        
+        db_result = json.leads(sqlTest)
+
 """
 display list of cell phones.
 """
