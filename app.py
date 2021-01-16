@@ -10,6 +10,9 @@ app = Flask(__name__, template_folder="templates", static_folder = "static")
 def redirect_home():
     return render_template("index.html",name=None)
 
+"""
+Register page rander, if user register, it will return a message to tell user it is successful or any error occurs.
+"""
 @app.route("/register", methods=["POST", "GET"])
 def register():
     """
@@ -17,25 +20,28 @@ def register():
     """
     if request.method == "POST":
         res = request.form
-        print(res)
         email = res["email"]
         username = res["userName"]
         password = res["passWord"]
         # result should be return to html page.
-        res = dbModule.add_user(username,password,email)
-        print(res)
+        db_res = dbModule.add_user(username,password,email)
         return redirect("/")
     else:
         return render_template("register.html",name=None)
 
+"""
+Try to find user is exist in DB or not first,
+if exist and password match, login success.
+else login fails.
+"""
 @app.route("/login",methods=["POST"])
 def login():
     if request.method == 'POST':
-        res = requets.form
+        res = request.form
         username = res["username"]
         password = res["password"]
         
-        db_result = json.leads(dbModule.find_user("username",username))
+        db_result = json.loads(dbModule.find_user("username",username))
         user_data = list(db_result["user"])
 
         if len(user_data) > 0:
@@ -44,32 +50,60 @@ def login():
             
         return jsonify({'err':"Invalid user or password"})
 
-@app.route("/update", methods=['PUT'])
+"""
+update user's information include password or email.
+It shouldn't allow user to edit their username, but fix it later.
+"""
+@app.route("/update", methods=['POST'])
 def update_user():
-    res = requets.get_json()
-    field_to_update = res['field']
-    value = res['value']
+    res = request.form
+    username = res["username"]
+    field_to_update = res["field"]
+    value = res["value"]
     db_res = json.loads(dbModule.update_user(username,field_to_update,value))
 
-    if len(db_res['user']) > 0:
+    if 'error' in db_res:
+        return db_res
+
+    if db_res['status'] == 'success':
         return jsonify({'msg' : 'Update Successful.'}), 202
     else:
         return jsonify({'err' : 'User invalid.'}), 400
 
-@app.route("/delete", methods=['DELETE'])
+# for user to delete themselves account, or for administrator uses.
+@app.route("/delete", methods=['POST'])
 def delete_user():
-    res = requets.form
+    res = request.form
     username = res["username"]
-
+    
+    # check user is exist or not first.
     user_exist = (
-        len(db_res = json.loads(dbModule.find_user('username',username))['user']) > 0
+        len(list(json.loads(dbModule.find_user('username',username))['user'])) > 0
     )
     if user_exist:
-        dbModule.delete_user("username",username)
-        return jsonify({'msg' : f"Deactivated {user} successful."}), 202
+        db_res = json.loads(dbModule.delete_user(username))
+        if 'error' in db_res:
+            return db_res
+        elif db_res["status"] == 'fails':
+            return db_res
+        return jsonify({'msg' : f"Deactivated '{username}' successful."}), 202
     else:
         return jsonify({'err' : "User invalid"}), 409
 
+# for testing, normal user shouldn't has this authority.
+@app.route("/find",methods=['GET'])
+def find_user():
+    username = request.args.get('username')
+    print(username)
+
+    db_res = json.loads(dbModule.find_user('username',username))
+    if 'error' in db_res:
+        return db_res
+    user_data = list(db_res['user'])
+
+    if len(user_data) > 0:
+        return jsonify({'user' : user_data[0]}), 200
+    return jsonify({'error' : 'Invalid user name.'})
 
 """
 display list of cell phones.

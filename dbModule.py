@@ -1,5 +1,6 @@
 import mysql.connector
 from mysql.connector import errorcode
+import json
 
 def dbConnector():
     try:
@@ -39,7 +40,7 @@ def init():
 def add_user(username,password,email):
     mydb = dbConnector()
     if mydb == None:
-        return "can not connect DB."
+        return json.dumps({"error":"can not find DB."})
     cursor = mydb.cursor(buffered=True)
 
     # can ignore the id parameter if there already has one row in table.
@@ -50,10 +51,9 @@ def add_user(username,password,email):
         mydb.commit()
         cursor.close()
         mydb.close()
-        return "add user succussful."
+        return json.dumps({"msg" : "Add user successful."})
     except mysql.connector.Error as err:
-        print(str(err))
-        return str(err)
+        return json.dumps({"error" : str(err)})
 
 def find_user(column_name,data_value):
     mydb = dbConnector()
@@ -61,15 +61,14 @@ def find_user(column_name,data_value):
         return None
     cursor = mydb.cursor(buffered=True)
 
-    query = f"SELECT * FROM user WHERE {column_name} == '{data_value}'"
+    query = f"SELECT * FROM users WHERE {column_name} = '{data_value}'"
 
     try:
-        cursor.execute(sql)
-        mydb.commit()
+        cursor.execute(query)
     except mysql.connector.Error as err:
-        return json.dumps({'error',str(err)})
+        return json.dumps({'error' : str(err)})
     
-    result_set = curosr.fetchall()
+    result_set = cursor.fetchall()
     json_data = [dict(zip([key[0] for key in cursor.description],row))
                 for row in result_set]
 
@@ -80,18 +79,18 @@ def find_user(column_name,data_value):
         if isinstance(o,datetime.datetime):
             return o.__str___()
 
-    return json.dumps({'username' : json_data} ,default = myConverter)
+    return json.dumps({'user' : json_data} ,default = myConverter)
 
-def update_user(name,column_name,value_name):
+def update_user(username,column_name,value_name):
     mydb = dbConnector()
     if mydb == None:
-        return None
+        return json.dumps({'status' : "fails"}) 
     cursor = mydb.cursor(buffered=True)
 
     query = f"UPDATE users SET {column_name} = '{value_name}' WHERE username = '{username}'"
 
     try:
-        cursor.execute(sql)
+        cursor.execute(query)
         mydb.commit()
     except mysql.connector.Error as err:
         return json.dumps({'error' : str(err)})
@@ -103,6 +102,30 @@ def update_user(name,column_name,value_name):
         if isinstance(o,datetime.datetime):
             return o.__str___()
 
-    return json.dumps({'all_users' : json_data},default = myConverter)
+    return json.dumps({'status' : "success"},default = myConverter)
+
+def delete_user(username):
+    mydb = dbConnector()
+    if mydb == None:
+        return json.dumps({"status" : "fails"})
+    cursor = mydb.cursor(buffered=True)
+
+    query = f"DELETE FROM users WHERE username = '{username}'"
+
+    try:
+        cursor.execute(query)
+        mydb.commit()
+    except mysql.connector.Error as err:
+        return json.dumps({'error' : str(err)})
+
+    cursor.close()
+    mydb.close()
+
+    def myConverter(o):
+        if isinstance(o,datetime.datetime):
+            return o.__str___()
+
+    return json.dumps({'status' : "success"},default = myConverter)
+        
 
 init()
