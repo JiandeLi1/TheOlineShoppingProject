@@ -39,8 +39,13 @@ pip install requirements.txt
 ```
 
 4. Run the server
+Mac OS:
 ```
 python3 test.py
+```
+Windows:
+```
+py test.py
 ```
 
 ## When use database
@@ -55,6 +60,9 @@ mydb = mysql.connector.connect(
             auth_plugin='mysql_native_password'
         )
 ```
+
+Since id key set as AUTO_INCREMENT, that means if table is not empty, you can add entry into table without id parameter.
+If table is empty, you have to insert a entry into table first, than the program will work.
 
 ## Update Log
 date: 01-16-2021
