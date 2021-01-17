@@ -51,6 +51,7 @@
 }
 
 .login .login_form ul li .error{
+  display: none;
   margin-left: 10px;
   color: #c81523;
 }

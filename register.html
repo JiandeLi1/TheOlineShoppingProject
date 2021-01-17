@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="./css/register.css">
     
     <script src="https://kit.fontawesome.com/1d299bbc93.js" crossorigin="anonymous"></script>
+    <script src="./js/register.js"></script>
 </head>
 <body>
     <header class="w header">
@@ -39,18 +40,20 @@
                         <input type="email">
                         <span class="error"><i class="fas fa-times-circle"></i> Email invalid</span>
                     </li>
-                    <li>
+                    <li id="pass_word">
                         <label>Pass word:</label>
-                        <input type="password" minlength="3" maxlength="10">
+                        <input id="passWord" type="password" minlength="3" maxlength="10" >
+                        <i id="eye" class="fas fa-eye-slash"></i>
                         <span class="error"><i class="fas fa-times-circle"></i> Pass word invalid</span>
                     </li>
                     <li class="safe">
                         Safety: <em class="weak">Weak</em> <em class="mid">middle</em> <em class="strong">Strong</em>
                     </li>
-                    <li>
+                    <li id="comf_pw">
                         <label>Comfirm pass word:</label>
-                        <input type="password" minlength="3" maxlength="10">
-                        <span class="error"><i class="fas fa-times-circle"></i> Both pass word aren't match</span>
+                        <input id="comfirm_pw" type="password" minlength="3" maxlength="10" required>
+                        <i id="eye2" class="fas fa-eye-slash"></i>
+                        <span class='error comfirm_msg'><i class="fas fa-times-circle"></i> Both pass word aren't match</span>
                     </li>
                 
                     <li class="agree">
@@ -157,4 +160,7 @@
     </footer>
     
 </body>
+
+
+
 </html>
