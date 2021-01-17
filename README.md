@@ -32,6 +32,11 @@ On Windows:
 > venv\Scripts\activate
 ```
 
+Quit from virtual enviroment
+```
+deactivate
+```
+
 3. Install all library in requirements.txt
 The requirements.txt has all library that you need to run this program, install them.
 ```
