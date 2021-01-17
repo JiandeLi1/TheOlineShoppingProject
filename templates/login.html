@@ -28,17 +28,21 @@
             
         </h3>
         <div class="login_form">
-            <form action="">
+            <form
+                class="loginForm"
+                action="/login"
+                method="post"
+            >
                 <ul>
                     <li>
                         <label>User name:</label>
-                        <input type="text" minlength="3" maxlength="10">
+                        <input type="text" class="userName" name="userName" title = "user name" minlength="3" maxlength="10">
                         <span class="error"><i class="fas fa-times-circle"></i> User name invalid</span>
                     </li>
                    
                     <li>
                         <label>Pass word:</label>
-                        <input type="password" minlength="3" maxlength="10">
+                        <input type="password" name="passWord" minlength="3" maxlength="10">
                         <span class="error"><i class="fas fa-times-circle"></i> Pass word invalid</span>
                     </li>
 

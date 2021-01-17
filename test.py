@@ -21,14 +21,15 @@ def register():
     else:
         return render_template("register.html",name=None)
 
-@app.route("/login",methods=["POST"])
+@app.route("/login",methods=["POST","GET"])
 def login():
     if request.method == 'POST':
-        res = requets.form
-        username = res["username"]
-        password = res["password"]
-        print(username, password, email)
-    return render_template("index.html",name=None)
+        res = request.form
+        username = res["userName"]
+        password = res["passWord"]
+        print(username, password)
+        return render_template("index.html",name=None)
+    return render_template("login.html",name=None)
 
 """
 display list of cell phones.
