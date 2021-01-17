@@ -21,15 +21,15 @@ $ python3 -m venv venv
 ```
 On Windows:
 ```
-py -3 -m venv venv
+py -m venv venv
 ```
 Activate the environment
 ```
-. venv/bin/activate
+your project directory%. venv/bin/activate
 ```
 On Windows:
 ```
-> venv\Scripts\activate
+your project directory>.venv\Scripts\activate
 ```
 
 Quit from virtual enviroment
@@ -39,6 +39,12 @@ deactivate
 
 3. Install all library in requirements.txt
 The requirements.txt has all library that you need to run this program, install them.
+On mac:
+```
+pip3 install requirements.txt
+```
+
+On windows:
 ```
 pip install requirements.txt 
 ```
