@@ -29,6 +29,8 @@
 .shortcut ul li{
     float: left;
 }
+
+
  
 
 .shortcut .fr ul li:nth-child(even){
@@ -36,6 +38,33 @@
     width: 1px;
     margin: 9px 15px;
     background-color: #666666;
+}
+
+.shortcut  .fr ul li .drop_down{
+    display: none;
+    position: absolute;
+    left: 1452px;
+    width: 5.5%;
+    z-index: 9;
+    
+}
+
+.shortcut .fr ul li .drop_down>li{
+    float: left;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding:0px 20px;
+    text-align: center;
+    background-color:#f1f1f1;
+    border: 1px solid #ddd;
+    border-width:0px 1px 1px 1px;
+}
+
+.shortcut .fr ul li:last-child:hover
+.drop_down
+{
+display: block;
 }
 
 .arrow-icon::after{
@@ -190,6 +219,9 @@ color: #8ba4f7;
         color:  #8ba4f7;
     }
 
+
+
+
     .footer{
         height: 415px;
         background-color: #f5f5f5;
@@ -264,6 +296,41 @@ color: #8ba4f7;
         margin-top: 10px ;
     }
 
+    .slider_bar{
+            position: absolute;
+            /* display: none; */
+            width: 50px;
+            height: 83px;
+            left:1555px ;
+            top: 520px;
+            text-align: center;
+            font-size: 30px;
+            
+        }
+        .chat{
+            position: absolute;
+            /* display: none; */
+            width: 100%;
+            height: 40px;
+            top:0;
+            padding:2px;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+            cursor: pointer;
+
+        }
+
+        .back{
+            position: absolute;
+            display: none;
+            width: 100%;
+            height: 40px;
+            bottom:0;
+            padding:2px;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
 
 

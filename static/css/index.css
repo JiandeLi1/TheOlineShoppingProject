@@ -307,4 +307,17 @@ border: 1px;
     padding: 4px 2px 2px 2px;
 }
 
+ .sub_menu{
+        display: none;
+    }
+
+.dd ul li:hover .sub_menu{
+    position: absolute;
+    display: block;
+    margin-top: -31px;
+    margin-left: 200px;
+    background-color: #fff;
+    z-index: 9;
+}
+
 
