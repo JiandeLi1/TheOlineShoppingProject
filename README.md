@@ -80,6 +80,15 @@ A easier way to debug backend APIs is use postman, it can easier to call APIs wi
 tutorial:
 https://www.guru99.com/postman-tutorial.html
 
+## Sqlalchemy
+SQLAlchemy is the Python SQL toolkit and Object Relational Mapper that gives application developers the full power and flexibility of SQL.
+Try to use ORM to handle database operations.
+tutorial:
+https://docs.sqlalchemy.org/en/13/orm/tutorial.html
+
+## Connect Online database
+app.py connect online database insteads of local now.
+
 ## Update Log
 date: 01-16-2021
 Add basic backend function to this project.
@@ -87,3 +96,10 @@ Connect database when user to register, use mysql database.
 
 date: 01-16-2021
 Add find/update/delete functions to Backend.
+
+data: 01-18-2021
+Create a new branch online, this branch is for test deploy this project to online server platform.
+Change database from mysql to postgresql, and use sqlalchemy as a middle tool between backend and database.
+Project connects online database insteads of local database, developors don't have to craete local database anymore.
+Not any new function added this time.
+Add some files for deploy to heroku.
