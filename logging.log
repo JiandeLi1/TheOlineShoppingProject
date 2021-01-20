@@ -1,0 +1,5 @@
+2021-01-20 03:00:07,745 - db - INFO - deleteUser method is called.
+2021-01-20 03:00:08,161 - db - ERROR - User : xiaohong not found
+ 03:00:07,745 - __main__ - INFO - render delete page.
+2021-01-20 03:00:07,745 - __main__ - INFO - username xiaohong
+2021-01-20 03:00:08,161 - __main__ - ERROR - "{\"error\": \"Invalid user.\"}"

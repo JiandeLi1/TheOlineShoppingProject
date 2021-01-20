@@ -89,7 +89,7 @@ class PurchaseRecord(Base):
     
 
 
-# code beblow for init table in database.
+# code beblow for init tables in database.
 
 def init():
     from sqlalchemy import create_engine
@@ -100,4 +100,5 @@ def init():
     session.configure(bind = engine)
     Base.metadata.create_all(engine)
 
-init()
+# This method is used to create tables in database.
+# init()
