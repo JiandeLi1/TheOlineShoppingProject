@@ -103,3 +103,10 @@ Change database from mysql to postgresql, and use sqlalchemy as a middle tool be
 Project connects online database insteads of local database, developors don't have to craete local database anymore.
 Not any new function added this time.
 Add some files for deploy to heroku.
+
+data: 01-19-2021
+add scoped_session to db.py, make sure each thread only get one session.(thread save).
+session create when needs, close it when leave.
+
+date: 01-20-2021
+Add logging function to backend, recording program's activities, easier to tracking.
