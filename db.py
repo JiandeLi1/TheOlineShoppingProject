@@ -1,4 +1,4 @@
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker, scoped_session
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import create_engine
 from flask import jsonify
@@ -10,35 +10,44 @@ engine = create_engine(
     echo=True
 )
 print(engine.url.database)
-Session = sessionmaker(bind=engine)
-session = Session()
+Session_factory = scoped_session(sessionmaker(bind=engine))
 
-def addUser(username,password,email):
+def addUser(username,password,email,avatarUrl):
+    session = Session_factory()
     try:
         user = data_models.User(
             username = username,
             password = password,
-            email = email
+            email = email,
+            avatarUrl = avatarUrl
         )
         session.add(user)
         session.commit()
         return json.dumps({'success' : "Add user success."})
     except Exception as e:
+        session.rollback()
         return json.dumps({'error' : str(e)})
+    finally:
+        session.close()
 
 def updateUserInfor(username,field_to_update,value):
     user = findUser(username)
 
     if user == None:
         return json.dumps({'error' : 'Invalid user'})
-    
+
     if hasattr(user,field_to_update):
+        session = Session_factory()
         try:
             setattr(user,field_to_update,value)
+            session.add(session.merge(user))
             session.commit()
             return json.dumps({'success' : 'Update Successful.'})
         except Exception as e:
+            session.rollback()
             return json.dumps({'error' : str(e)})
+        finally:
+            session.close()
     else:
         return json.dumps({'error' : 'Fails to update.'})
 
@@ -48,12 +57,16 @@ def deleteUser(username):
     if user == None:
         return json.dumps({'error' : 'Invalid user.'})
 
+    session = Session_factory()
     try:
         session.delete(user)
         session.commit()
         return json.dumps({'success' : 'user is deleted.'})
     except Exception as e:
+        session.rollback()
         return json.dumps({'error' : str(e)})
+    finally:
+        session.close()
 
 def getUser(username):
     user = findUser(username)
@@ -64,4 +77,9 @@ def getUser(username):
     return json.dumps(user.serialize())
 
 def findUser(username):
-    return session.query(data_models.User).filter_by(username = username).first()
+    session = Session_factory()
+    try:
+        return session.query(data_models.User).filter_by(username = username).first()
+    finally:
+        session.close()
+    return None

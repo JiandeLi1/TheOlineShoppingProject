@@ -11,11 +11,13 @@ class User(Base):
     username = Column(String(), unique = True, nullable = False)
     password = Column(String(), nullable = False)
     email = Column(String(), unique = True, nullable = False)
+    avatarUrl = Column(String())
 
-    def __init__(self,username,password,email):
+    def __init__(self,username,password,email,avatarUrl):
         self.username = username
         self.password = password
         self.email = email
+        self.avatarUrl = avatarUrl
     
     def __repr__(self):
         return '<id {}>'.format(self.id)
@@ -25,7 +27,8 @@ class User(Base):
             'id' : self.id,
             'username' : self.username,
             'password' : self.password,
-            'email' : self.email
+            'email' : self.email,
+            'avatarUrl' : self.avatarUrl
         }
 
 class Item(Base):
@@ -35,20 +38,23 @@ class Item(Base):
     price = Column(Float(), nullable = False)
     itemName = Column(String(), unique = True, nullable = False)
     amount = Column(Integer(), nullable = False)
+    itemImageUrl = Column(String())
 
-    def __init__(self,price,itemName,amount):
+    def __init__(self,price,itemName,amount,itemImageUrl):
         self.price = price
         self.itemName = itemName
         self.amount = amount
+        self.itemImageUrl = itemImageUrl
 
     def __repr__(self):
-        return '<itemName {}, price {}, amount {}>'.format(self.itemName,self.price,self.amount)
+        return '<itemName {}, price {}, amount {}, itemImageUrl{}>'.format(self.itemName,self.price,self.amount,self.itemImageUrl)
     
     def serialize(self):
         return {
             'itemName' : self.itemName,
             'price' : self.price,
-            'amount' : self.amount
+            'amount' : self.amount,
+            'itemImageUrl' : self.itemImageUrl
         }
 
 class PurchaseRecord(Base):
@@ -59,22 +65,25 @@ class PurchaseRecord(Base):
     itemName = Column(String(),nullable = False)
     amount = Column(Integer(),nullable = False)
     totalPrice = Column(Float(),nullable = False)
+    itemImageUrl = Column(String())
 
-    def __init__(self,user_id,itemName,amount,totalPrice):
+    def __init__(self,user_id,itemName,amount,totalPrice,itemImageUrl):
         self.user_id = user_id
         self.itemName = itemName
         self.amount = amount
         self.totalPrice = totalPrice
+        self.itemImageUrl = itemImageUrl
 
     def __repr__(self):
-        return '<user_id {}, itemName {}, amount {}, totalPrice {}>'.format(self.user_id,self.itemName,self.amount,self.totalPrice)
+        return '<user_id {}, itemName {}, amount {}, totalPrice {}, itemImageUrl{}>'.format(self.user_id,self.itemName,self.amount,self.totalPrice,self.itemImageUrl)
 
     def serialize(self):
         return {
             'user_id' : self.user_id,
             'itemName' : self.itemName,
             'amount' : self.amount,
-            'totalPrice' : self.totalPrice
+            'totalPrice' : self.totalPrice,
+            'itemImageUrl' : self.itemImageUrl
         }
 
     
@@ -91,4 +100,4 @@ def init():
     session.configure(bind = engine)
     Base.metadata.create_all(engine)
 
-# init()
+init()

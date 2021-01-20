@@ -29,8 +29,13 @@ def register():
         email = res["email"]
         username = res["userName"]
         password = res["passWord"]
+        try:
+            avatarUrl = res['avatarUrl']
+        except:
+            avatarUrl = ''
+
         # result should be return to html page.
-        db_res = db.addUser(username,password,email)
+        db_res = db.addUser(username,password,email,avatarUrl)
         print(db_res)
         return redirect("/")
     else:
@@ -48,7 +53,7 @@ def login():
         res = request.form
         username = res["username"]
         password = res["password"]
-        
+
         # user = db.session.query(User).filter_by(username = username).first()
         user = db.findUser(username)
 
