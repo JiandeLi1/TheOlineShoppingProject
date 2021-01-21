@@ -86,6 +86,29 @@ Try to use ORM to handle database operations.
 tutorial:
 https://docs.sqlalchemy.org/en/13/orm/tutorial.html
 
+Lock of sqlalchemy:
+There are two lock in sqlahchemy, share lock and mutex lock.
+Share lock also a read lock, if transactions are only read the same row in database, they can share the share lock. That means they can read this row in same time.
+While share lock exist, database can not assign the mutex lock to any transaction, it make sure the previous transaction reading a correct data.
+
+Mutex lock is a exclusive lock, when a transaction having this lock, database can not assign mutex lock and share lock to any transaction.
+
+Lock can fix problems when concurrent visit database, but it bring a new problem -- dead lock.
+
+How to get share lock?
+```
+session.query(Class).with_for_update(read = True, nowait = False).filter_by(columnname = value).first()
+read means is share lock or not, we want share lock, so it is True.
+nowait means if share lock not available now, wait or not, we want to wait for the lock ,so it False.
+```
+
+How to get mutex lock?
+```
+session.query(Class).with_for_update(nowait = False).filter_by(columnname = value).first()
+We don't have to explict declare 'read = False', default of this option is False.
+nowait means if share lock not available now, wait or not, we want to wait for the lock ,so it False.
+```
+
 ## Connect Online database
 app.py connect online database insteads of local now.
 
@@ -110,3 +133,8 @@ session create when needs, close it when leave.
 
 date: 01-20-2021
 Add logging function to backend, recording program's activities, easier to tracking.
+
+date: 01-21-2021
+Add lock when backend qeury database, it can avoid the lost update, dirty read and non-repeatable read problems.
+But may bring a new problem, dead lock.
+Will think a way to fix it later.
