@@ -135,7 +135,7 @@ def find_user():
     except:
         logger.info('No username parameter in request.')
 
-    db_res = db.getUser(username)
+    db_res = db.findUser(username)
     if 'error' in db_res:
         logger.error(json.dumps(db_res))
         return db_res

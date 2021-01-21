@@ -6,6 +6,8 @@ import data_models
 import json
 import logging
 
+import time
+
 # connect database.
 engine = create_engine(
     'postgresql+psycopg2://wiyeifpkilnddz:23594bc1b1a7382ba22476b4b84c39577eaa183c0f57b829a2eb1bd304b63452@ec2-52-0-65-165.compute-1.amazonaws.com/dfhrerbt81rcpc',
@@ -46,16 +48,20 @@ def addUser(username,password,email,avatarUrl):
 
 def updateUserInfor(username,field_to_update,value):
     logger.info('updateUserInfor method is called.')
-    user = findUser(username)
+    logger.info('Start getting mutex lock.')
+    session = Session_factory()
+    user = session.query(data_models.User).with_for_update(nowait = False).filter_by(username = username).first()
+    logger.info('Finish getting mutex lock.')
 
     if user == None:
         logger.error('User : %s not found',username)
+        session.close()
         return json.dumps({'error' : 'Invalid user'})
 
     if hasattr(user,field_to_update):
-        session = Session_factory()
         try:
             setattr(user,field_to_update,value)
+            logger.info('Updating user: %s into table.', username)
             session.add(session.merge(user))
             session.commit()
             logger.info('Update user : %s successfuly.',username)
@@ -72,14 +78,18 @@ def updateUserInfor(username,field_to_update,value):
 
 def deleteUser(username):
     logger.info('deleteUser method is called.')
-    user = findUser(username)
+    logger.info('Start getting mutex lock.')
+    session = Session_factory()
+    user = session.query(data_models.User).with_for_update(nowait = False).filter_by(username = username).first()
+    logger.info('Finish gettting mutex lock.')
 
     if user == None:
         logger.error('User : %s not found',username)
+        session.close()
         return json.dumps({'error' : 'Invalid user.'})
 
-    session = Session_factory()
     try:
+        logger.info('Tring to delete user: %s', username)
         session.delete(user)
         session.commit()
         logger.info('User : %s delete successfully.',username)
@@ -91,23 +101,16 @@ def deleteUser(username):
     finally:
         session.close()
 
-def getUser(username):
+def findUser(username):
     logger.info('getUser method is called.')
-    user = findUser(username)
+    logger.info('Start getting share lock.')
+    session = Session_factory()
+    user = session.query(data_models.User).with_for_update(nowait = False,read = True).filter_by(username = username).first()
 
     if user == None:
         logger.info('username %s not found',username)
+        session.close()
         return json.dumps({'error' : 'Invalid user.'})
     
+    session.close()
     return json.dumps(user.serialize())
-
-def findUser(username):
-    logger.info('findUser method is called.')
-    session = Session_factory()
-    try:
-        return session.query(data_models.User).filter_by(username = username).first()
-    except:
-        logger.info('username %s not found',username)
-    finally:
-        session.close()
-    return None
