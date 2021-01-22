@@ -25,8 +25,11 @@ formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(messag
 handler.setFormatter(formatter)
 logger.addHandler(handler)
 
+"""
+----------------- user data section -----------------------
+"""
 def addUser(username,password,email,avatarUrl):
-    logger('addUser method is called.')
+    logger.info('addUser method is called.')
     session = Session_factory()
     try:
         user = data_models.User(
@@ -106,6 +109,7 @@ def findUser(username):
     logger.info('Start getting share lock.')
     session = Session_factory()
     user = session.query(data_models.User).with_for_update(nowait = False,read = True).filter_by(username = username).first()
+    # print(user)
 
     if user == None:
         logger.info('username %s not found',username)
@@ -114,3 +118,19 @@ def findUser(username):
     
     session.close()
     return json.dumps(user.serialize())
+
+def findUserByPrefix(prefix):
+    logger.info('findUserByPrefix method is called.')
+    logger.info('Start getting share lock.')
+    session = Session_factory()
+    parameter = '{}%'.format(prefix)
+    print(parameter)
+    users = session.query(data_models.User).filter(data_models.User.username.like(parameter)).all()
+    logger.info('finished getting share lock.')
+
+    if users == None:
+        logger.error('No users found.')
+        return json.dumps({'error' : 'No users found.'})
+
+    logger.info('Find prefix success, now return results.')
+    return json.dumps(users,default = lambda x : x.serialize())

@@ -28,13 +28,10 @@ def redirect_home():
     return render_template("index.html",name=None)
 
 """
-Register page rander, if user register, it will return a message to tell user it is successful or any error occurs.
+------------------------- user account operation -----------------------
 """
 @app.route("/register", methods=["POST", "GET"])
 def register():
-    """
-    implment the register without store data, finish later maybe.
-    """
     logger.info('render register page.')
     if request.method == "POST":
         res = request.form
@@ -139,6 +136,21 @@ def find_user():
     if 'error' in db_res:
         logger.error(json.dumps(db_res))
         return db_res
+
+    return db_res, 200
+
+@app.route("/findUserPrefix",methods = ['GET'])
+def findUserPrefix():
+    logger.info("findUserPrefix method called.")
+    try:
+        prefix = request.args.get('prefix')
+        logger.info('prefix is %s : ', prefix)
+    except:
+        logger.info('No prefix parameter found.')
+    
+    db_res = db.findUserByPrefix(prefix)
+    if 'error' in db_res:
+        logger.info(json.dumps(db_res))
 
     return db_res, 200
 

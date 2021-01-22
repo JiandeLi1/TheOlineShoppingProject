@@ -1,10 +1,2 @@
-2021-01-21 00:54:30,565 - db - INFO - getUser method is called.
-2021-01-21 00:54:30,566 - db - INFO - Start getting share lock.
-2021-01-21 00:54:30,980 - db - INFO - username xiaoming not 2021-02021-01-21 00:54:51,068 - db - INFO - getUser method is called.
-2021-01-21 00:54:51,068 - db - INFO - Start getting share lock.
-2021-01-21 00:55:20,801 - db - INFO - updateUserInfor method is called.
-2021-01-21 00:55:20,801 - db - INFO - Start getting mutex lock.
-2021-01-21 00:55:20,838 - db - INFO - F2021-01-21 00:55:20,880 - __main__ - INFO - Update successful.
-2021-01-21 00:55:24,759 - __main__ - INFO - Render find page.
-2021-01-21 00:55:24,759 - __main__ - INFO - use2021-01-21 00:55:24,759 - db - INFO - getUser method is called.
-2021-01-21 00:55:24,759 - db - INFO - Start getting share lock.
+2021-01-22 02:50:19,545 - __main__ - INFO - render home page
+2021-01-22 02:50:19,545 - __main__ - INFO - render home page
