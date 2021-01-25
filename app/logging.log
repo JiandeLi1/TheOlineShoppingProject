@@ -1,0 +1,25 @@
+2021-01-25 04:39:57,849 - db - INFO - addPurchaseHistory meth2021-01-25 04:39:58,318 - __main__ - INFO - add user : xiaoming history successfully.
+2021-01-25 04:40:04,587 - __main__ - INFO - user hisotry is found.
+2021-01-25 04:40:48,867 - __main__ - INFO - add user : xiaoming history successfully.
+2021-01-25 04:40:50,873 - __main__ - INFO - user hisotry is found.
+dd user xiaoming purchase history successful.
+2021-01-25 04:39:58,318 - db - INFO - release the mutex lock.
+2021-01-25 04:40:04,497 - db - INFO - getPurchaseHistory method is called.
+2021-01-25 04:40:04,497 - db - INFO - start getting share lock.
+2021-01-25 04:40:04,553 - db - INFO - finished get share lock.
+2021-01-25 04:40:04,553 - db - INFO - start getting share lock.
+2021-01-25 04:40:04,587 - db - INFO - finished get share lock.
+2021-01-25 04:40:04,587 - db - INFO - user : %s history find.
+2021-01-25 04:40:48,624 - db - INFO - addPurchaseHistory method is called.
+2021-01-25 04:40:48,624 - db - INFO - start getting share lock.
+2021-01-25 04:40:48,624 - db - INFO - finished get share lock.
+2021-01-25 04:40:48,800 - db - INFO - release the share lock.
+2021-01-25 04:40:48,800 - db - INFO - start getting mutex lock.
+2021-01-25 04:40:48,867 - db - INFO - add user xiaoming purchase history successful.
+2021-01-25 04:40:48,867 - db - INFO - release the mutex lock.
+2021-01-25 04:40:50,778 - db - INFO - getPurchaseHistory method is called.
+2021-01-25 04:40:50,778 - db - INFO - start getting share lock.
+2021-01-25 04:40:50,834 - db - INFO - finished get share lock.
+2021-01-25 04:40:50,834 - db - INFO - start getting share lock.
+2021-01-25 04:40:50,873 - db - INFO - finished get share lock.
+2021-01-25 04:40:50,873 - db - INFO - user : %s history find.

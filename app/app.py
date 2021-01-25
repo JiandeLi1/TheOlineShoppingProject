@@ -5,7 +5,7 @@ import os
 import db
 import logging
 
-app = Flask(__name__, template_folder="templates", static_folder = "static")
+app = Flask(__name__, template_folder="../templates", static_folder = "../static")
 
 # app.config.from_object(os.environ['APP_SETTINGS'])
 # app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -153,6 +153,114 @@ def findUserPrefix():
         logger.info(json.dumps(db_res))
 
     return db_res, 200
+
+"""
+----------------- product section -----------------------------
+"""
+
+@app.route("/allProducts",methods=['GET'])
+def getAllProducts():
+    items = db.getAllProducts()
+    if 'error' in items:
+        logger.info('No product found.')
+        return jsonify({'status' : 'error','description' : 'no product found.'}), 404
+    logger.info('Find all products.')
+    return items, 200
+
+@app.route("/getProduct",methods=['POST'])
+def getProduct():
+    res = request.form
+    itemName = res["itemName"]
+    
+    logger.info('trying to find product %s' % itemName)
+
+    db_res = db.getProduct(itemName)
+
+    if 'error' in db_res:
+        logger.info('error happend.')
+        return db_res
+    
+    logger.info('Product %s found.' % itemName)
+    return db_res, 200
+
+@app.route("/addProduct",methods=['POST'])
+def addProduct():
+    res = request.form
+    itemName = res['itemName']
+    price = res['price']
+    amount = res['amount']
+    itemImageUrl = res['itemImageUrl']
+
+    logger.info('trying to add item %s to DB.' % itemName)
+
+    db_res = db.addProduct(itemName,price,amount,itemImageUrl)
+    data = json.loads(db_res)
+
+    if data.get('status') == 'fails':
+        return db_res, 400
+    return db_res, 200
+
+@app.route("/updateProducts",methods=['POST'])
+def updateProducts():
+    if(request.data):
+        datas = request.get_json()
+        db_res = db.updateProducts(datas)
+
+        if json.loads(db_res)['status'] == 'fails':
+            logger.info('update fails')
+            return db_res, 400
+        logger.info('update success.')
+        return db_res, 200
+
+
+"""
+--------------------------- user purchase history ---------------------------------------
+"""
+
+@app.route("/getHistory",methods=['POST'])
+def getPurchaseHistory():
+    res = request.form
+    try:
+        username = res['userName']
+    except Exception as e:
+        logger.info('username does not exist.')
+        return json.dumps({'status' : 'error', 'description' : 'lack of username'}), 400
+
+    db_res = db.getPurchaseHistory(username)
+    data = json.loads(db_res)
+
+    if not data:
+        logger.info('Can not find user %s history' % username)
+        return json.dumps({'status' : 'fails', 'description' : 'No user history Found.'})
+
+    logger.info('user hisotry is found.')
+
+    return db_res, 200
+
+@app.route("/addHistory",methods=['POST'])
+def addPurchaseHistory():
+    res = request.form
+    try:
+        username = res['userName']
+        itemName = res['itemName']
+        amount = res['amount']
+        totalPrice = res['totalPrice']
+        itemImageUrl = res['itemImageUrl']
+    except Exception as e:
+        logger.info('username does not exist.')
+        return json.dumps({'status' : 'error', 'description' : 'lack of username'}), 400
+
+    db_res = db.addPurchaseHistory(username,itemName,amount,totalPrice,itemImageUrl)
+    data = json.loads(db_res)
+
+    if data.get('status') == 'fails':
+        logger.info('add user : %s history fails.' % username)
+        return db_res, 400
+
+    logger.info('add user : %s history successfully.' % username)
+
+    return db_res, 200
+
 
 """
 display list of cell phones.
