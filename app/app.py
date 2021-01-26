@@ -48,7 +48,7 @@ def register():
         # result should be return to html page.
         db_res = db.addUser(username,password,email,avatarUrl)
         logger.info('resul: %s',json.dumps(db_res))
-        return redirect("/")
+        return json.dumps({})
     else:
         return render_template("register.html",name=None)
 
