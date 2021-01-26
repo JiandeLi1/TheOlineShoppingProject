@@ -61,9 +61,11 @@ def register():
         for user,val in fake_users.items():
             if val['email'] == email:
                 return json.dumps({'status' : 'email already exist.'}), 404
-        return json.dumps({'status' : 'success'}), 200
+        return json.dumps({'status' : 'success','redirctUrl' : '/index.html'}), 200
+        # print("here.")
+        # return render_template("index.html",name=None)
     else:
-        return render_template("register.html",name=None)
+        return render_template("test.html",name=None)
 
 @app.route("/login",methods=["POST","GET"])
 def login():
