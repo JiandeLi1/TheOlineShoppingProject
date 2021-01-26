@@ -262,8 +262,8 @@ def addPurchaseHistory(username,itemName,amount,totalPrice,itemImageUrl):
     logger.info('addPurchaseHistory method is called.')
     logger.info('start getting share lock.')
     session = Session_factory()
-    logger.info('finished get share lock.')
     user = session.query(data_models.User).with_for_update(nowait = False,read = True).filter_by(username = username).first()
+    logger.info('finished get share lock.')
     if user == None:
         logger.info('usernaem %s not found.' % username)
         session.close()
