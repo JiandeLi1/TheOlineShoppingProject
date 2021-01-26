@@ -15,9 +15,15 @@
     <link rel="stylesheet" href="{{ url_for('static',filename='css/common.css') }}">
     <!-- <link rel="stylesheet" href="./css/index.css"> -->
     <link rel="stylesheet" href="{{ url_for('static',filename='css/list.css') }}">
+    <script src="{{ url_for('static',filename='js/Shopping.js') }}"></script>
     <script src="https://kit.fontawesome.com/1d299bbc93.js" crossorigin="anonymous"></script>
+    <script src="/static/js/Shopping.js"></script>
 </head>
 <body>
+    <!-- <div class="slider_bar">
+        <div class="chat"><i class="far fa-comment-dots"></i></div>
+        <div class="back"><i class="fas fa-arrow-up"></i></div>
+    </div> -->
 
         <section class="shortcut">
             <div class="w">
@@ -35,15 +41,20 @@
         
                 <div class="fr">
                     <ul>
-                        <li>My Order</li>
+                        <li><a href="javascript:;">My Order</a></li>
                         <li></li>
-                        <li>My Car</li>
+                        <li><a href="javascript:;">My Car</a></li>
                         <li></li>
-                        <li>VIP</li>
+                        <li><a href="javascript:;">VIP</a></li>
                         <li></li>
-                        <li>About Us</li>
+                        <li><a href="javascript:;">About Us</a></li>
                         <li></li>
-                        <li>Navigation <i class="arrow-icon"></i></li>
+                        <li><a href="javascript:;">Navigation <i class="arrow-icon"></i></a>
+                            <ul class="drop_down">
+                                <li><a href="./register.html">Sign In</a> </li>
+                                <li><a href="javascript:;">Sign Up</a> </li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
         
@@ -75,7 +86,8 @@
         
             <div class="shopCar">
                 <i class="fas fa-shopping-cart style_bule"></i>
-                My Shopping Cart
+                <a href="/templates/shoppingcart.html">My Shopping Cart</a>
+               
                 <i class="count">9</i>
             </div>
         </header>
@@ -133,7 +145,7 @@
                                  <span class="bar"><div></div></span> 
                                  <span class="sold_percen">25 left</span>
                               </div>
-                              <button>
+                              <button class="buy_product">
                                   <a href="javascript:;">Buy Now!</a>
                               </button>
                         </div>

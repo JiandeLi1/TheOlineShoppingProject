@@ -51,13 +51,31 @@
     border: 1px solid #999;
 }
 
+.register .reg_form ul #pass_word,#comf_pw{
+    position: relative;
+   
+}
+
+.register .reg_form ul li #eye,#eye2{
+    position: absolute;
+    top:12px;
+    left: 352px;
+}
+
+.register .reg_form ul li #eye,#eye2:hover{
+ cursor: pointer;
+}
+
 .register .reg_form ul li .error{
+  display: none;
   margin-left: 10px;
   color: #c81523;
 }
 
 
+
 .register .reg_form ul .safe{
+    display: none;
     padding-left: 133px;
     margin-bottom: 10px;
 }
@@ -68,14 +86,17 @@
 }
 
 .weak{
+    display: none;
     background-color: #c81523;
 }
 
 .mid{
+    display: none;
     background-color: #f79100;
 }
 
 .strong{
+    display: none;
     background-color: #40b83f;
 }
 

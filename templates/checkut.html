@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Out</title>
+    <link rel="shortcut icon" href="/static/images/icon.ico">
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="stylesheet" href="/static/css/common.css">
+    <script src="https://kit.fontawesome.com/1d299bbc93.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="{{ url_for('static',filename='images/icon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/common.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/checkout.css') }}">
+    <script src="{{ url_for('static',filename='js/checkout.js') }}"></script>
+    <script src="/static/js/checkout.js"></script>
+</head>
+<body>
+        <div id="shoppingcart_section">
+            <div id="cart-title">
+                Your Cart
+            </div>
+            <ul>
+
+            </ul>
+            <div id="cart-totle">
+                Totle: <span id='totle'></span>
+            </div>
+        </div>
+        <section class="shortcut">
+            <div class="w">
+                <div class="fl">
+                    <ul>
+                        <li>Welcome!&nbsp; &nbsp;</li>
+        
+                        <li>
+        
+                            <!-- <a href="./login.html">Sign In</a> /
+                                    <a href="./register.html" class="style_red">Sign Up</a> -->
+        
+                            <a href="./login">Sign In</a> /
+                            <!-- <a href="/register" class="style_red">Sign Up</a> -->
+                            <form method="get" action="/register" style="display: inline;">
+                                <input type="submit" name="Sign up" class="button2" value="Sign up" title="Register">
+                            </form>
+        
+                        </li>
+                    </ul>
+                </div>
+        
+        
+                <div class="fr">
+                    <ul>
+                        <li><a href="javascript:;">My Order</a></li>
+                        <li></li>
+                        <li><a href="javascript:;">My Car</a></li>
+                        <li></li>
+                        <li><a href="javascript:;">VIP</a></li>
+                        <li></li>
+                        <li><a href="javascript:;">About Us</a></li>
+                        <li></li>
+                        <li><a href="javascript:;">Navigation <i class="arrow-icon"></i></a>
+                            <ul class="drop_down">
+                                <li><a href="/login">Sign In</a> </li>
+                                <li><a href="/register">Sign Up</a> </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+        
+            </div>
+        </section>
+        
+        <header class="header w">
+            <div class="logo">
+                <h1><a href="{{ url_for('redirect_home') }}" title="Shopping">Shopping</a></h1>
+            </div>
+            <div class="search">
+                <input type="search" placeholder="Search">
+                <button><i class="fas fa-search"></i>
+                </button>
+            </div>
+            <div class="hotWords ">
+                <a href="javascript:;">iPhone12</a>
+                <a href="javascript:;">iPhone12Pro</a>
+                <a href="javascript:;">MacBook</a>
+                <a href="javascript:;">Airpod</a>
+                <a href="javascript:;">iPad</a>
+                <a href="javascript:;">iphone12Case</a>
+                <a href="javascript:;">iPhone12ProCase</a>
+            </div>
+        
+            <div class="shopCar">
+                <i class="fas fa-shopping-cart style_bule"></i>
+                My Shopping Cart
+                <i class="count">9</i>
+            </div>
+        </header>
+        
+        <nav class="nav">
+            <div class="w">
+                
+                <div class="navitems">
+                    <ul>
+                        <li><a href="javascript:;">Brands</a></li>
+                        <li><a href="javascript:;">Deals</a></li>
+                        <li><a href="javascript:;">Services</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="checkOutForm w">
+            <form action="">
+            <h1>Billing address</h1>
+            <div class="form">
+                <div class="name section">
+                    <div style="display: inline-block; margin-right: 20px;">
+                        <label class="label" for="First name"> First name</label>
+                        <div>
+                            <input class="name-input" type="text" required placeholder="First Name">
+                        </div>
+                    </div>
+                    <div style="display: inline-block;">
+                        <label class="label" for="Last name"> Last name</label>
+                        <div>
+                            <input class="name-input" type="text" required placeholder="Last Name">
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="username section">
+                    <label class="label" for="User name"> Username</label>
+                    <div>
+                        <span>@</span>
+                        <input class="user-input" type="text" placeholder="User Name" required>
+                    </div>
+                </div>
+                <div class="email section">
+                    <label class="label" for="email"> Email</label>
+                    <div>
+                        <input class="input" type="email" placeholder="you@example.com">
+                    </div>
+                </div>
+                <div class="address section">
+                    <label class="label" for="address">Address</label>
+                    <div>
+                        <input class="input" type="text" placeholder="address" required>
+                    </div>
+                    <label class="label" for="address">Address 2 <span>(Optional)</span></label>
+                    <div>
+                        <input class="input" type="text" placeholder="address">
+                    </div>
+                    
+                    
+                    
+                    <div id="address-choose">
+                        <span>
+                            <label for="country" class="form-label">
+                                Country
+                            </label>
+                            <select name="" id="country" class="form-select" required>
+                                <option value="">Choose...</option>
+                                <option value="United States">United States</option>
+                            </select>
+                        </span>
+                        <span>
+                            <label for="State" class="form-label">
+                                State
+                            </label>
+                            <select name="" id="state"  class="form-select" required>
+                                <option value="">Choose...</option>
+                                <option value="NY">New York</option>
+                                <option value="CA">California</option>
+                            </select>
+                        </span>
+                        
+                        
+                        
+                        <span>
+                            <label for="Zip" class="form-label">Zip</label>
+                            <input id="Zip" type="text"  placeholder="Zip Codee" required>
+                        </span>
+                        
+                    </div>
+                </div>
+                
+                <hr>
+
+                <div id="checkboxsection" >
+                    <div class="form-check">
+                        <input id="sameAddress" type="checkbox">
+                        <label for="sameAddress">Shipping address is the same as my billing address</label>
+                    </div>
+                    <div id="shippingaddress">
+                        <div>
+                            <label for="SAddress" class="form-label">Shipping Address</label>
+                            <input id="SAddress" type="text" class="form-control" placeholder="Shipping Address" required>
+                        </div>
+                        <div>
+                            <label for="SAddress2" class="form-label">Shipping Address 2 (Optional)</label>
+                            <input id="SAddress2" type="text" class="form-control" placeholder="Shipping Address">
+                        </div>
+                    </div>
+                    <div class="form-check" style="margin-top:10px;"> 
+                        <input id="saveInfo" type="checkbox" class="form-check-input">
+                        <label for="saveInfo">Save this information for next time</label>
+                    </div>
+                </div>
+
+            </div>
+            <hr style="margin-top:15px;">
+
+            <div class="payment_section">
+                <h4>Payments</h4>
+                <div id="way">
+                    <div class="form-check">
+                        <input class="pay-way" id="credit" type="radio" name="paymentMethod" checked required>
+                        <label for="credit">Credit Card <i class="fas fa-credit-card"></i></label>
+                    </div>
+                    <div class="form-check">
+                        <input class="pay-way" id="Debit" type="radio" name="paymentMethod" class="form-check-input" required>
+                        <label for="Debit">Debit Card <i class="fas fa-credit-card"></i></label>
+                    </div>
+                    <div class="form-check">
+                        <input class="pay-way" id="PayPal" type="radio" name="paymentMethod" class="form-check-input" required>
+                        <label for="PayPal">PayPal <i class="fab fa-paypal"></i> </label>
+                    </div>
+                </div>
+                <div id="card-info">
+                    <span>
+                        <label for="CardName" class="form-label">Name on Card</label>
+                        <input  id="CardName" type="text" class="form-control card-nn" placeholder="Name on card" required>
+                    </span>
+                    <span >
+                        <label for="CardNumber" class="form-label">Credit Card Number</label>
+                        <input  id="Credit Card Number" type="text" class="form-control card-nn" placeholder="Credit Card Number" required>
+                    </span>
+                    <div>
+                        <span>
+                            <label for="Expiration" class="form-label">Crad Expiration data</label>
+                            <input id="Expiration" type="text" class="form-control card-safe" placeholder="Expiration data" required>
+                        
+                        </span>
+                        <span>
+                            <label for="CVV" class="form-label">Crad CVV</label>
+                            <input id="CVV" type="text" class="form-control card-safe" placeholder="CVV" required>
+                        </span>
+
+                    </div>
+                    
+                </div>
+            </form>
+        </div>
+        <hr style="margin-top: 10px;">
+        <button id="check-out">Continue to checkout</button>
+    </div>
+    <footer class="footer">
+        <div class="w">
+            <div class="mod_service">
+                <ul>
+                    <li><i class="fas fa-thumbs-up"></i>
+                        <div>
+                            <h3>Quality assurance</h3>
+                            <p>Good product quality</p>
+                        </div>
+                    </li>
+                    <li><i class="fas fa-shipping-fast"></i>
+                        <div>
+                            <h3>Fast delivery</h3>
+                            <p>Fast delivery, fast arrival</p>
+                        </div>
+                    </li>
+                    <li><i class="fas fa-money-check"></i>
+                        <div>
+                            <h3>Return guarantee</h3>
+                            <p>Return unconditionally within 14 days</p>
+                        </div>
+                    </li>
+    
+                    <li><i class="fas fa-star"></i>
+                        <div>
+                            <h3>VIP service</h3>
+                            <p>VIP has more privileges</p>
+                        </div>
+    
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="mod_help">
+                <dl>
+                    <dt>Get Support ›</dt>
+                    <dd><a href="javascript:;">Visit our Support Center</a></dd>
+                    <dd><a href="javascript:;">Schedule or Manage Your Service</a></dd>
+                    <dd><a href="javascript:;">Shop with an Expert</a></dd>
+                    <dd><a href="javascript:;">Protection & Support Plans</a></dd>
+                    <dd><a href="javascript:;">Trade-In Program</a> </dd>
+                    <dd><a href="javascript:;">Product Recalls</a></dd>
+                </dl>
+    
+                <dl>
+                    <dt>Partnerships ›</dt>
+                    <dd><a href="javascript:;">Affiliate Program</a></dd>
+                    <dd><a href="javascript:;">Developers</a></dd>
+                    <dd><a href="javascript:;">Advertise with Us</a></dd>
+                </dl>
+    
+    
+                <dl>
+                    <dt>Orders & Returns ›</dt>
+                    <dd><a href="javascript:;">Order Status</a></dd>
+                    <dd><a href="javascript:;">Shipping, Delivery & Store Pickup</a></dd>
+                    <dd><a href="javascript:;">Return & Exchange Promise</a></dd>
+                    <dd><a href="javascript:;">Price Match Guarantee</a></dd>
+                </dl>
+    
+    
+    
+                <dl>
+                    <dt>My Shopping ›</dt>
+                    <dd><a href="javascript:;">View Points & Certificates</a></dd>
+                    <dd><a href="javascript:;">Member Offers</a></dd>
+                    <dd><a href="javascript:;">Sign in or Create Account</a></dd>
+                </dl>
+            </div>
+        </div>
+    
+        <div class="mod_copyRight">
+            <div class="w">
+                <div class="links">
+                    <a href="javascript:;">Corporate Information</a>|
+                    <a href="javascript:;">Forums, Blog & More</a>|
+                    <a href="javascript:;">Careers</a>|
+                    <a href="javascript:;">Accessibility</a>|
+                    <a href="javascript:;">Terms & Conditions</a>|
+                    <a href="javascript:;">Privacy</a>|
+                    <a href="javascript:;">Interest-Based Adss</a>|
+                    <a href="javascript:;">California Privacy Rights</a>|
+                    <a href="javascript:;">Do Not Sell My Personal Information</a>|
+                    <a href="javascript:;">California Supply Chain Transparency Act</a>
+                </div>
+            </div>
+            <div class="copyRight">
+                The best Shopping ©
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>

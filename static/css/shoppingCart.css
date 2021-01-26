@@ -1,0 +1,207 @@
+   .shoppingCart {
+       height: 400px;
+        margin: 20px auto;
+        background: #FFF;
+    }
+    .shoppingCart .check{
+        width: 50px;
+
+    }
+    .shoppingCart .check i{
+        color: #fff;
+        display: inline-block;
+
+        width: 18px;
+        height: 18px;
+        line-height: 18px;
+        border: 1px solid #e0e0e0;
+        margin-left: 24px;
+        background-color: #fff;
+        font-size: 16px;
+        text-align: center;
+        vertical-align: middle;
+        position: relative;
+        top: -1px;
+        cursor: pointer;
+        font-family: "iconfont";
+    }
+
+       .hid {
+        overflow: hidden;
+    }
+    .left {
+        float: left;
+    }
+    .i_acity {
+
+        border-color: #ff6700 !important;
+        background-color: #ff6700 !important;
+    }
+    .shoppingCart .img {
+        width: 190px;
+    }
+    .shoppingCart .img img {
+        display: block;
+        width: 80px;
+        height: 80px;
+        margin: 3px auto;
+    }
+    .shoppingCart .name {
+        width: 300px;
+    }
+    .shoppingCart .name span {
+        line-height: 1;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        font-size: 18px;
+        font-weight: normal;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    .shoppingCart .price {
+        width: 144px;
+        text-align: right;
+        padding-right: 84px;
+    }
+    .shoppingCart .price span {
+        color: #ff6700;
+        font-size: 16px;
+    }
+    .shoppingCart .number{
+        width: 150px;
+    }
+    .shoppingCart .subtotal{
+        width: 130px;
+
+    }
+    .shoppingCart .ctrl {
+        width: 105px;
+        padding-right:25px;
+        text-align: center;
+    }
+    .shoppingCart .ctrl a {
+        font-size: 20px;
+        cursor: pointer;
+        display: block;
+        width: 26px;
+        height: 26px;
+        margin: 30px auto;
+        line-height: 26px;
+    }
+    .shoppingCart .ctrl a:hover {
+        color: #FFF;
+        background: #ff6700;
+        border-radius: 50%;
+    }
+    .head_row {
+        height: 70px;
+        line-height: 70px;
+    }
+    .head_row, .row {
+        border-bottom: solid 1px #e0e0e0;
+    }
+    .row {
+        height: 86px;
+        line-height:86px;
+        padding: 15px 0;
+        margin: 0px;
+    }
+    #sum_area{
+        float: right;
+        height: 60px;
+        line-height: 60px;
+        background: white;
+        margin: 20px auto;
+    }
+    #sum_area #pay{
+        text-align: center;
+        padding: 10px 20px;
+        color: #fff;
+        font-weight: 600;
+        background-color: #62a2f5;
+    }
+
+     #sum_area #pay_amout{
+         padding:0 20px;
+         font-weight: 600;
+         color:#62a2f5;
+     }
+
+    #sum_area #pay_amout #price_num{
+        width:100px;
+        height: 60px;
+        font-size: 25px;
+        font-weight: 500;
+        color:#FF4B00 ;
+        
+    }
+
+    .item_count_i{
+        height: 85px;
+        width:10%;
+        /*border: 1px solid black;*/
+        float: left;
+        margin-right: 25px;
+    }
+    .num_count{
+        width:150px;
+        height:40px;
+        border: 1.2px solid #E0E0E0;
+        float:right;
+        margin-top: 21px;
+
+    }
+    .count_i{
+        width:30%;
+        height:40px;
+        line-height: 40px;
+        float: left;
+        text-align: center;
+        font-size:21px;
+        color: #747474;
+    }
+    .count_i:hover{
+        width:30%;
+        height:40px;
+        line-height: 40px;
+        float: left;
+        text-align: center;
+        font-size:21px;
+        color: #747474;
+        background: #E0E0E0;
+        cursor: pointer;
+    }
+    .c_num{
+        width:40%;
+        height:40px;
+        line-height: 40px;
+        float: left;
+        text-align: center;
+        font-size:16px;
+        color: #747474;
+    }
+    .count_d{
+        width:30%;
+        height:40px;
+        line-height: 40px;
+        float: left;
+        text-align: center;
+        font-size:25px;
+        color: #747474;
+    }
+    .count_d:hover{
+        width:30%;
+        height:40px;
+        line-height: 40px;
+        float: left;
+        text-align: center;
+        font-size:25px;
+        color: #747474;
+        background: #E0E0E0;
+        cursor: pointer;
+    }
+    .i_acity2 {
+        border-color: #ff6700 !important;
+        background-color: #ff6700 !important;
+    }
