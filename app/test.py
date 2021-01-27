@@ -73,9 +73,8 @@ def login():
         res = request.form
         username = res["userName"]
         password = res["passWord"]
-        for username in fake_users:
-            if user['username'] == username and user['password'] == password:
-                return json.dumps({'status' : 'success','username' : username, 'redirctUrl' : '/'}), 200
+        if username in fake_users and fake_users[username]['password'] == password:
+            return json.dumps({'status' : 'success','username' : username, 'redirctUrl' : '/'}), 200
         return json.dumps({'status' : 'fails','description' : 'user not found.'}), 404
     return render_template("login.html",name=None)
 
@@ -124,7 +123,7 @@ def purchaseHistory():
     else:
         return json.dumps({'status' : 'fails','description' : 'username not found.'}), 404
     if userID in fake_purchaseHistory:
-        return json.dumps('status' : 'success',fake_purchaseHistory[userID],'redirctUrl' : '/'), 200
+        return json.dumps({'status' : 'success','redirctUrl' : '/'} + json.dumps(fake_purchaseHistory[userID])), 200
     return json.dumps({'status' : 'fails','description' : 'user %s did not has any purchase history.' % username}),404
 
 
