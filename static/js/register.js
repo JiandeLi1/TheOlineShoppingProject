@@ -163,7 +163,7 @@ window.addEventListener('load', function () {
                  var res = xhr.responseText;
                  if (res == "{'status' : 'success'}") {
                      alert("registration success!");
-                     window.location.href = "./index";
+                     window.location.href = "/";
                  }
                  else {
                      alert("registration not success!");
