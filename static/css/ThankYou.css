@@ -1,0 +1,138 @@
+.shoppingCart {
+       height: 400px;
+       width: 900px;
+        margin: 20px auto;
+        background: #FFF;
+        text-align: center;
+    }
+    
+    
+
+    .hid {
+        overflow: hidden;
+    }
+    .left {
+        float: left;
+    }
+    .i_acity {
+
+        border-color: #ff6700 !important;
+        background-color: #ff6700 !important;
+    }
+    .shoppingCart .img {
+        width: 190px;
+    }
+    .shoppingCart .img img {
+        display: block;
+        width: 80px;
+        height: 80px;
+        margin: 3px auto;
+    }
+    .shoppingCart .name {
+        width: 300px;
+    }
+    .shoppingCart .name span {
+        line-height: 1;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        font-size: 18px;
+        font-weight: normal;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    .shoppingCart .price {
+        width: 144px;
+        text-align: right;
+        padding-right: 84px;
+    }
+    .shoppingCart .price span {
+        color: #ff6700;
+        font-size: 16px;
+    }
+    .shoppingCart .number{
+        width: 150px;
+    }
+    .shoppingCart .subtotal{
+        width: 130px;
+
+    }
+    
+    
+    
+    .head_row {
+        height: 70px;
+        line-height: 70px;
+    }
+    .head_row, .row {
+        border-bottom: solid 1px #e0e0e0;
+    }
+    .row {
+        height: 86px;
+        line-height:86px;
+        padding: 15px 0;
+        margin: 0px;
+    }
+    #sum_area{
+        float: right;
+        height: 60px;
+        line-height: 60px;
+        background: white;
+        margin: 20px auto;
+    }
+    #sum_area #pay{
+        text-align: center;
+        padding: 10px 20px;
+        color: #fff;
+        font-weight: 600;
+        background-color: #62a2f5;
+    }
+
+     #sum_area #pay_amout{
+         padding:0 20px;
+         font-weight: 600;
+         color:#62a2f5;
+     }
+
+    #sum_area #pay_amout #price_num{
+        width:100px;
+        height: 60px;
+        font-size: 25px;
+        font-weight: 500;
+        color:#FF4B00 ;
+        
+    }
+
+   
+    .num_count{
+        width:150px;
+        height:40px;
+        border: 1.2px solid #E0E0E0;
+        float:right;
+        margin-top: 21px;
+
+    }
+    
+    
+    .c_num{
+        width:40%;
+        height:40px;
+        line-height: 40px;
+        float: left;
+        text-align: center;
+        font-size:16px;
+        color: #747474;
+    }
+   
+    .i_acity2 {
+        border-color: #ff6700 !important;
+        background-color: #ff6700 !important;
+    }
+
+    #thank_box h3{
+        margin:20px 0;
+        text-align: center;
+        font-size: 20px;
+        font-weight: 600;
+        color:#567af3;
+    }

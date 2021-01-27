@@ -22,6 +22,10 @@
 
 </head>
 <body>
+    <div class="slider_bar">
+        <div class="chat"><i class="far fa-comment-dots"></i></div>
+        <div class="back"><i class="fas fa-arrow-up"></i></div>
+    </div>
     <section class="shortcut">
         <div class="w">
             <div class="fl">
@@ -29,11 +33,16 @@
                     <li>Welcome!&nbsp; &nbsp;</li>
 
                     <li>
-                        <a href="javascript:;">Sign In</a> 
+
+                        <!-- <a href="./login.html">Sign In</a> /
+                        <a href="./register.html" class="style_red">Sign Up</a> -->
+
+                        <a href="./login">Sign In</a> /
                         <!-- <a href="/register" class="style_red">Sign Up</a> -->
                         <form method = "get" action = "/register" style="display: inline;">
                             <input type = "submit" name = "Sign up" class="button2" value = "Sign up" title = "Register">
                         </form>
+
                     </li>
                 </ul>
             </div>
@@ -41,15 +50,20 @@
 
             <div class="fr">
                 <ul>
-                    <li>My Order</li>
+                    <li><a href="javascript:;">My Order</a></li>
                     <li></li>
-                    <li>My Car</li>
+                    <li><a href="javascript:;">My Car</a></li>
                     <li></li>
-                    <li>VIP</li>
+                    <li><a href="javascript:;">VIP</a></li>
                     <li></li>
-                    <li>About Us</li>
+                    <li><a href="javascript:;">About Us</a></li>
                     <li></li>
-                    <li>Navigation <i class="arrow-icon"></i></li>
+                    <li><a href="javascript:;">Navigation <i class="arrow-icon"></i></a>
+                        <ul class="drop_down">
+                            <li><a href="/login">Sign In</a> </li>
+                            <li><a href="/register">Sign Up</a> </li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
             
@@ -90,22 +104,146 @@
                 </div>
                 <div class="dd">
                     <ul>
-                        <!-- <li><a href="./list.html">Cell phone</a></li> -->
-                        <li><a href="{{ url_for('listPhone') }}">Cell phone</a></li>
-                        <li><a href="javascript:;">TV & Home Theater</a></li>
-                        <li><a href="javascript:;">Computer & Table</a></li>
-                        <li><a href="javascript:;">Audio</a></li>
-                        <li><a href="javascript:;">Video Game</a></li>
-                        <li><a href="javascript:;">Application</a></li>
-                        <li><a href="javascript:;">Movies & Music</a></li>
-                        <li><a href="javascript:;">Car Electronics & GPS</a></li>
-                        <li><a href="javascript:;">Wearable Technology</a></li>
-                        <li><a href="javascript:;">Health & Personal Care</a></li>
-                        <li><a href="javascript:;">Fitness</a></li>
-                        <li><a href="javascript:;">Home Office</a></li>
-                        <li><a href="javascript:;">Smart Home</a></li>
-                        <li><a href="javascript:;">Toys</a></li>
-                        <li><a href="javascript:;">Sustainable Living</a></li>
+
+                        <li><a href="/list/cellphone">Cell phone</a>
+                            <div class="sub_menu">
+                                <ul>
+                                    <li><a href="/list/cellphone">Apple</a></li>
+                                    <li><a href="javascript:;">Samsung</a></li>
+                                    <li><a href="javascript:;">HuaWei</a></li>
+                                </ul>
+                            </div>
+                            
+                        </li>
+                        <li><a href="javascript:;">TV & Home Theater</a>
+                            <div class="sub_menu">
+                                <ul>
+                                    <li><a href="./list.html">Apple</a></li>
+                                    <li><a href="javascript:;">Samsung</a></li>
+                                    <li><a href="javascript:;">HuaWei</a></li>
+                                </ul>
+                            </div>
+                            
+                        </li>
+                        <li><a href="javascript:;">Computer & Table</a>
+                            <div class="sub_menu">
+                                <ul>
+                                    <li><a href="./list.html">Apple</a></li>
+                                    <li><a href="javascript:;">Samsung</a></li>
+                                    <li><a href="javascript:;">HuaWei</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="javascript:;">Audio</a>
+                            <div class="sub_menu">
+                                <ul>
+                                    <li><a href="./list.html">Apple</a></li>
+                                    <li><a href="javascript:;">Samsung</a></li>
+                                    <li><a href="javascript:;">HuaWei</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="javascript:;">Video Game</a>
+                            <div class="sub_menu">
+                                <ul>
+                                    <li><a href="./list.html">Apple</a></li>
+                                    <li><a href="javascript:;">Samsung</a></li>
+                                    <li><a href="javascript:;">HuaWei</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="javascript:;">Application</a>
+                            <div class="sub_menu">
+                                <ul>
+                                    <li><a href="./list.html">Apple</a></li>
+                                    <li><a href="javascript:;">Samsung</a></li>
+                                    <li><a href="javascript:;">HuaWei</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="javascript:;">Movies & Music</a>
+                            <div class="sub_menu">
+                                <ul>
+                                    <li><a href="./list.html">Apple</a></li>
+                                    <li><a href="javascript:;">Samsung</a></li>
+                                    <li><a href="javascript:;">HuaWei</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="javascript:;">Car Electronics & GPS</a>
+                            <div class="sub_menu">
+                                <ul>
+                                    <li><a href="./list.html">Apple</a></li>
+                                    <li><a href="javascript:;">Samsung</a></li>
+                                    <li><a href="javascript:;">HuaWei</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="javascript:;">Wearable Technology</a>
+                            <div class="sub_menu">
+                                <ul>
+                                    <li><a href="./list.html">Apple</a></li>
+                                    <li><a href="javascript:;">Samsung</a></li>
+                                    <li><a href="javascript:;">HuaWei</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="javascript:;">Health & Personal Care</a>
+                            <div class="sub_menu">
+                                <ul>
+                                    <li><a href="./list.html">Apple</a></li>
+                                    <li><a href="javascript:;">Samsung</a></li>
+                                    <li><a href="javascript:;">HuaWei</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="javascript:;">Fitness</a>
+                            <div class="sub_menu">
+                                <ul>
+                                    <li><a href="./list.html">Apple</a></li>
+                                    <li><a href="javascript:;">Samsung</a></li>
+                                    <li><a href="javascript:;">HuaWei</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="javascript:;">Home Office</a>
+                            <div class="sub_menu">
+                                <ul>
+                                    <li><a href="./list.html">Apple</a></li>
+                                    <li><a href="javascript:;">Samsung</a></li>
+                                    <li><a href="javascript:;">HuaWei</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="javascript:;">Smart Home</a>
+                            <div class="sub_menu">
+                                <ul>
+                                    <li><a href="./list.html">Apple</a></li>
+                                    <li><a href="javascript:;">Samsung</a></li>
+                                    <li><a href="javascript:;">HuaWei</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="javascript:;">Toys</a>
+                            <div class="sub_menu">
+                                <ul>
+                                    <li><a href="./list.html">Apple</a></li>
+                                    <li><a href="javascript:;">Samsung</a></li>
+                                    <li><a href="javascript:;">HuaWei</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="javascript:;">Sustainable Living</a>
+                            <div class="sub_menu">
+                                <ul>
+                                    <li><a href="./list.html">Apple</a></li>
+                                    <li><a href="javascript:;">Samsung</a></li>
+                                    <li><a href="javascript:;">HuaWei</a></li>
+                                </ul>
+                            </div>
+                        </li>
+
+
 
                     </ul>
                 </div>
@@ -137,9 +275,7 @@
                     <li>
                         <a href="javascript:;"><img src="{{ url_for('static',filename='upload/3.png') }}" alt=""></a>
                     </li>
-                    <li>
-                        <a href="javascript:;"><img src="{{ url_for('static',filename='upload/1.png') }}" alt=""></a>
-                    </li>
+
                 </ul>
                 <ol class="circle">
                    
