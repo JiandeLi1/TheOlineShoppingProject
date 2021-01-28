@@ -73,7 +73,7 @@ def login():
         res = request.form
         username = res["userName"]
         password = res["passWord"]
-        if username in fake_users and fake_users[username]['password'] == password:
+        if username in fake_users and fake_users[username]['passWord'] == password:
             return json.dumps({'status' : 'success','username' : username, 'redirctUrl' : '/'}), 200
         return json.dumps({'status' : 'fails','description' : 'user not found.'}), 404
     return render_template("login.html",name=None)
