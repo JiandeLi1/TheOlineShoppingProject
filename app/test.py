@@ -119,7 +119,7 @@ If user exist and has purchase history, return all of them.
 @app.route("/history",methods=['POST'])
 def purchaseHistory():
     res = request.form
-    username = res['username']
+    username = res['userName']
     if username in fake_userIDNameMap:
         userID = fake_userIDNameMap[username]
     else:

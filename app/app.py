@@ -48,7 +48,9 @@ def register():
         # result should be return to html page.
         db_res = db.addUser(username,password,email,avatarUrl)
         logger.info('resul: %s',json.dumps(db_res))
-        return json.dumps({})
+        if 'success' in db_res:
+            return json.dumps({'status' : 'success','redirctUrl' : '/'}), 200
+        return return json.dumps({'status' : 'fails','description' : 'Invalid username or password.'}), 200
     else:
         return render_template("register.html",name=None)
 
@@ -71,13 +73,13 @@ def login():
 
         if user == None:
             logger.warning('username : %s not found.', username)
-            return jsonify({"error" : "Invalid username or password."}), 400
+            return jsonify({'status' : 'fails',"description" : "Invalid username or password."}), 400
         if user.password == password:
             logger.info('username : %s password is match.', username)
-            return jsonify(user.serialize()), 200
+            return return json.dumps({'status' : 'success','redirctUrl' : '/'}), 200
         
         logger.info('Invalid password.')
-        return jsonify({'err':"Invalid user or password"}), 400
+        return jsonify({'status' : 'fails',"description" : "Invalid username or password."}), 400
     return render_template("login.html",name=None)
 
 """
@@ -97,9 +99,9 @@ def update_user():
 
     if 'error' in db_res:
         logger.error('error : %s',json.dumps(db_res))
-        return jsonify({'msg' : 'error'}), 400
+        return jsonify({'status' : 'fails',"description" : json.dumps(db_res)}), 400
     logger.info('Update successful.')
-    return jsonify({'msg' : 'Update successful.'}), 200
+    return json.dumps({'status' : 'success','redirctUrl' : '/'}), 200
 
 # for user to delete themselves account, or for administrator uses.
 
@@ -116,10 +118,10 @@ def delete_user():
 
     if 'error' in db_res:
         logger.error(json.dumps(db_res))
-        return jsonify({'msg' : json.loads(db_res)['error']}), 409
+        return jsonify({'status' : 'fails',"description" : json.dumps(db_res)}), 400
     
     logger.info('Delete user : %s successful.', username)
-    return jsonify({'msg' : f"Deactivated '{username}' successful."}), 202
+    return json.dumps({'status' : 'success','redirctUrl' : '/'}), 200
 
 # for testing, normal user shouldn't has this authority.
 
@@ -135,9 +137,9 @@ def find_user():
     db_res = db.findUser(username)
     if 'error' in db_res:
         logger.error(json.dumps(db_res))
-        return db_res
+        return json.dumps({'status' : 'fails','description' : json.dumps(db_res)}), 200
 
-    return db_res, 200
+    return json.dumps({'status' : 'success','user' : json.dumps(db_res)}), 200
 
 @app.route("/findUserPrefix",methods = ['GET'])
 def findUserPrefix():
