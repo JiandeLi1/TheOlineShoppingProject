@@ -162,6 +162,7 @@ window.addEventListener('load', function () {
                 var res = JSON.parse(xhr.responseText);
                 if(res.status == 'success'){
                     alert("registration success!");
+                    // Should be check it 'res.redirctUrl' exist first.
                     window.location.href = res.redirctUrl;
                 }
                 else {
