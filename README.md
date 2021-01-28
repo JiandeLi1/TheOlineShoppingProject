@@ -5,11 +5,10 @@ The front-End for this project, I will not use any tools or framework because th
 This is a branch that add Backend server to this project.
 See if it is ok.
 
-<<<<<<< HEAD
-##How to deploy backend server?
-=======
+
+
 ## How to deploy backend server?
->>>>>>> 889fbddc7273b2379516c9ab374f481479aec731
+
 1. Install latest python3 on your computer.
 https://www.python.org/downloads/
 
@@ -36,14 +35,11 @@ On Windows:
 your project directory>.venv\Scripts\activate
 ```
 
-<<<<<<< HEAD
-=======
 Quit from virtual enviroment
 ```
 deactivate
 ```
 
->>>>>>> 889fbddc7273b2379516c9ab374f481479aec731
 3. Install all library in requirements.txt
 The requirements.txt has all library that you need to run this program, install them.
 On mac:
@@ -57,11 +53,7 @@ pip install requirements.txt
 ```
 
 4. Run the server
-<<<<<<< HEAD
-```
-python3 test.py
-```
-=======
+
 Mac OS:
 ```
 python3 test.py
@@ -70,7 +62,7 @@ Windows:
 ```
 py test.py
 ```
->>>>>>> 889fbddc7273b2379516c9ab374f481479aec731
+
 
 ## When use database
 Because we are using local database, you have to make sure you already install mysql database first.
@@ -85,7 +77,6 @@ mydb = mysql.connector.connect(
         )
 ```
 
-<<<<<<< HEAD
 ## Update Log
 date: 01-16-2021
 Add basic backend function to this project.
@@ -138,9 +129,7 @@ Connect database when user to register, use mysql database.
 
 date: 01-16-2021
 Add find/update/delete functions to Backend.
-<<<<<<< HEAD
->>>>>>> 889fbddc7273b2379516c9ab374f481479aec731
-=======
+
 
 data: 01-18-2021
 Create a new branch online, this branch is for test deploy this project to online server platform.
@@ -160,4 +149,3 @@ date: 01-21-2021
 Add lock when backend qeury database, it can avoid the lost update, dirty read and non-repeatable read problems.
 But may bring a new problem, dead lock.
 Will think a way to fix it later.
->>>>>>> online

@@ -55,13 +55,16 @@ def register():
         email = res["email"]
         username = res["userName"]
         password = res["passWord"]
+        print(username," ",password)
         # result should be return to html page.
         if username in fake_users:
-            return json.dumps({'status' : 'user already exist'}), 404
+            return json.dumps({'status' : 'fails', 'description' : 'username already exist.'}), 404
         for user,val in fake_users.items():
             if val['email'] == email:
-                return json.dumps({'status' : 'email already exist.'}), 404
-        return json.dumps({'status' : 'success'}), 200
+                return json.dumps({'status' : 'fails', 'description' : 'email already exist.'}), 404
+        return json.dumps({'status' : 'success','redirctUrl' : '/'}), 200
+        # print("here.")
+        # return render_template("index.html",name=None)
     else:
         return render_template("register.html",name=None)
 
@@ -71,10 +74,10 @@ def login():
         res = request.form
         username = res["userName"]
         password = res["passWord"]
-        for username in fake_users:
-            if user['username'] == username and user['password'] == password:
-                return json.dumps({'username' : username}), 200
-        return json.dumps({'status' : 'user not found.'}), 404
+        print(username," ",password)
+        if username in fake_users and fake_users[username]['password'] == password:
+            return json.dumps({'status' : 'success','username' : username, 'redirctUrl' : '/'}), 200
+        return json.dumps({'status' : 'fails','description' : 'user not found.'}), 404
     return render_template("login.html",name=None)
 
 """
@@ -100,12 +103,12 @@ def checkout():
                 itemFind = False
 
             if not itemFind:
-                return json.dumps({'status' : 'Item %s not found.' % data['itemName']}), 404
+                return json.dumps({'status' : 'fails', 'description' : 'Item %s not found.' % data['itemName']}), 404
             if not priceMatch:
-                return json.dumps({'status' : '%s Price not match.' % data['itemName']}), 404
+                return json.dumps({'status' : 'fails','description' : '%s Price not match.' % data['itemName']}), 404
             if not amountEnough:
-                return json.dumps({'status' : '%s Product not enough.' % data['itemName']}), 404
-        return json.dumps({'status' : 'checkout success.'}), 200
+                return json.dumps({'status' : 'fails','description' : '%s Product not enough.' % data['itemName']}), 404
+        return json.dumps({'status' : 'success','redirctUrl' : '/'}), 200
 
 """
 Check user's history by username,
@@ -120,10 +123,10 @@ def purchaseHistory():
     if username in fake_userIDNameMap:
         userID = fake_userIDNameMap[username]
     else:
-        return json.dumps({'status' : 'username not found.'}), 404
+        return json.dumps({'status' : 'fails','description' : 'username not found.'}), 404
     if userID in fake_purchaseHistory:
-        return json.dumps(fake_purchaseHistory[userID]), 200
-    return json.dumps({'status' : 'user %s did has any purchase history.' % username}),404
+        return json.dumps({'status' : 'success','redirctUrl' : '/'} + json.dumps(fake_purchaseHistory[userID])), 200
+    return json.dumps({'status' : 'fails','description' : 'user %s did not has any purchase history.' % username}),404
 
 
 
