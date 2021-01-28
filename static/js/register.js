@@ -161,8 +161,6 @@ window.addEventListener('load', function () {
         // can't send parameters with md5 decrypt.
         //  xhr.send("email=" + input_email + "&userName=" + input_username + "&passWord=" + md5(input_password));
         xhr.send("email=" + input_email + "&userName=" + input_username + "&passWord=" + input_password);
-         console.log(md5(input_password));
-         alert("stop.");
          xhr.onreadystatechange = function () {
              if (xhr.readyState == 4 && xhr.status == 200) {
                 var res = JSON.parse(xhr.responseText);

@@ -1,6 +1,0 @@
-2021-01-26 00:10:51,173 - __main__ - INFO - render home page
-2021-01-26 00:10:53,656 - __main__ - INFO - render register page.
-2021-01-26 00:11:10,466 - __main__ - INFO - render register page.
-2021-01-26 00:11:10,791 - __main__ - INFO - render register page.
-2021-01-26 00:11:10,792 - __main__ - INFO - register page calling POST method.
-2021-01-26 00:11:10,792 - __main__ - INFO - username : abcd, password : 123456, email : Jli030@citymail.cuny.edu, avatarUrl : 

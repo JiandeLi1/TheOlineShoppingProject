@@ -50,7 +50,7 @@ def register():
         logger.info('resul: %s',json.dumps(db_res))
         if 'success' in db_res:
             return json.dumps({'status' : 'success','redirctUrl' : '/'}), 200
-        return return json.dumps({'status' : 'fails','description' : 'Invalid username or password.'}), 200
+        return json.dumps({'status' : 'fails','description' : 'Invalid username or password.'}), 200
     else:
         return render_template("register.html",name=None)
 
@@ -64,19 +64,20 @@ else login fails.
 def login():
     if request.method == 'POST':
         res = request.form
-        username = res["username"]
-        password = res["password"]
+        username = res["userName"]
+        password = res["passWord"]
 
         logger.info('username : %s, password : %s',username,password)
 
         user = db.findUser(username)
+        user_ditc = json.loads(user)
 
-        if user == None:
+        if 'error' in user:
             logger.warning('username : %s not found.', username)
             return jsonify({'status' : 'fails',"description" : "Invalid username or password."}), 400
-        if user.password == password:
+        if user_ditc['password'] == password:
             logger.info('username : %s password is match.', username)
-            return return json.dumps({'status' : 'success','redirctUrl' : '/'}), 200
+            return json.dumps({'status' : 'success','redirctUrl' : '/'}), 200
         
         logger.info('Invalid password.')
         return jsonify({'status' : 'fails',"description" : "Invalid username or password."}), 400
@@ -90,7 +91,7 @@ It shouldn't allow user to edit their username, but fix it later.
 @app.route("/update", methods=['POST'])
 def update_user():
     res = request.form
-    username = res["username"]
+    username = res["userName"]
     field_to_update = res["field"]
     value = res["value"]
     logger.info('username : %s, field : %s, value : %s',username,field_to_update,value)
@@ -98,8 +99,8 @@ def update_user():
     db_res = db.updateUserInfor(username,field_to_update,value)
 
     if 'error' in db_res:
-        logger.error('error : %s',json.dumps(db_res))
-        return jsonify({'status' : 'fails',"description" : json.dumps(db_res)}), 400
+        logger.error('error : %s',json.loads(db_res))
+        return jsonify({'status' : 'fails',"description" : json.loads(db_res)}), 400
     logger.info('Update successful.')
     return json.dumps({'status' : 'success','redirctUrl' : '/'}), 200
 
@@ -118,7 +119,7 @@ def delete_user():
 
     if 'error' in db_res:
         logger.error(json.dumps(db_res))
-        return jsonify({'status' : 'fails',"description" : json.dumps(db_res)}), 400
+        return jsonify({'status' : 'fails',"description" : json.loads(db_res)}), 400
     
     logger.info('Delete user : %s successful.', username)
     return json.dumps({'status' : 'success','redirctUrl' : '/'}), 200
@@ -129,7 +130,7 @@ def delete_user():
 def find_user():
     logger.info('Render find page.')
     try:
-        username = request.args.get('username')
+        username = request.args.get('userName')
         logger.info('username is %s',username)
     except:
         logger.info('No username parameter in request.')
@@ -137,9 +138,9 @@ def find_user():
     db_res = db.findUser(username)
     if 'error' in db_res:
         logger.error(json.dumps(db_res))
-        return json.dumps({'status' : 'fails','description' : json.dumps(db_res)}), 200
+        return json.dumps({'status' : 'fails','description' : json.loads(db_res)}), 200
 
-    return json.dumps({'status' : 'success','user' : json.dumps(db_res)}), 200
+    return json.dumps({'status' : 'success','user' : json.loads(db_res)}), 200
 
 @app.route("/findUserPrefix",methods = ['GET'])
 def findUserPrefix():
@@ -167,7 +168,7 @@ def getAllProducts():
         logger.info('No product found.')
         return jsonify({'status' : 'error','description' : 'no product found.'}), 404
     logger.info('Find all products.')
-    return items, 200
+    return json.dumps({'status' : 'success','itmes' : json.loads(items)}), 200
 
 @app.route("/getProduct",methods=['POST'])
 def getProduct():
@@ -180,10 +181,10 @@ def getProduct():
 
     if 'error' in db_res:
         logger.info('error happend.')
-        return db_res
+        return json.dumps({'status' : 'fails', 'description' : json.loads(db_res)}), 404
     
     logger.info('Product %s found.' % itemName)
-    return db_res, 200
+    return json.dumps({'status' : 'success','item' : json.loads(db_res)}), 200
 
 @app.route("/addProduct",methods=['POST'])
 def addProduct():
@@ -199,8 +200,8 @@ def addProduct():
     data = json.loads(db_res)
 
     if data.get('status') == 'fails':
-        return db_res, 400
-    return db_res, 200
+        return json.dumps({'status' : 'fails','description' : data}), 404
+    return json.dumps({'status' : 'success'}), 200
 
 @app.route("/updateProducts",methods=['POST'])
 def updateProducts():
@@ -237,7 +238,7 @@ def getPurchaseHistory():
 
     logger.info('user hisotry is found.')
 
-    return db_res, 200
+    return json.dumps({'status' : 'success','history' : data})
 
 @app.route("/addHistory",methods=['POST'])
 def addPurchaseHistory():
