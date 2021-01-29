@@ -110,14 +110,27 @@ def checkout():
                 return json.dumps({'status' : 'fails','description' : '%s Product not enough.' % data['itemName']}), 404
         return json.dumps({'status' : 'success','redirctUrl' : '/'}), 200
 
+@app.route("/getProduct",methods=['POST'])
+def getProduct():
+    res = request.form
+    itemName = res['itemName']
+
+    if itemName in fake_product:
+        return json.dumps(fake_product[itemName]), 200
+    return json.dumsp({'status' : 'fails'}), 404
+
+@app.route("/getAllProduct",methods=['GET'])
+def getAllProduct():
+    return json.dumps(fake_product), 200
+
 """
 Check user's history by username,
 If user is not exist, return username not exist.
 If user don't have purchase history, reutrn it.
 If user exist and has purchase history, return all of them.
 """
-@app.route("/history",methods=['POST'])
-def purchaseHistory():
+@app.route("/getHistory",methods=['POST'])
+def getHistory():
     res = request.form
     username = res['userName']
     if username in fake_userIDNameMap:
