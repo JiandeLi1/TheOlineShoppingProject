@@ -228,6 +228,22 @@ def updateProducts(datas):
     finally:
         session.close()
 
+def findProductsByPortion(itemName):
+    logger.info('findProductsByPortion method is called.')
+    logger.info('Start getting share lock.')
+    session = Session_factory()
+    parameter = '%{}%'.format(itemName)
+    # print(parameter)
+    items = session.query(data_models.Item).filter(data_models.Item.itemName.like(parameter)).all()
+    logger.info('finished getting share lock.')
+
+    if items == None:
+        logger.error('No items found.')
+        return json.dumps({'error' : 'No items found.'})
+
+    logger.info('Find items success, now return results.')
+    return json.dumps(items,default = lambda x : x.serialize())
+
 """
 ----------------------- user purchase history -----------------------------
 """

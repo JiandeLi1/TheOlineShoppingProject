@@ -8,94 +8,94 @@
     <meta name="description" content="Good shopping website">
     <!-- keyword -->
     <meta name="keywords" content="Shopping">
-    <title>Product List</title>
+    <title>Search List</title>
     <!-- putting icon -->
     <link rel="shortcut icon" href="{{ url_for('static',filename='images/icon.ico') }}">
     <link rel="stylesheet" href="{{ url_for('static',filename='css/base.css') }}">
     <link rel="stylesheet" href="{{ url_for('static',filename='css/common.css') }}">
     <!-- <link rel="stylesheet" href="./css/index.css"> -->
     <link rel="stylesheet" href="{{ url_for('static',filename='css/list.css') }}">
-    <script src="{{ url_for('static',filename='js/Shopping.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/searchPage.js') }}"></script>
     <script src="https://kit.fontawesome.com/1d299bbc93.js" crossorigin="anonymous"></script>
-    <script src="/static/js/Shopping.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
+
 <body>
     <!-- <div class="slider_bar">
         <div class="chat"><i class="far fa-comment-dots"></i></div>
         <div class="back"><i class="fas fa-arrow-up"></i></div>
     </div> -->
 
-        <section class="shortcut">
-            <div class="w">
-                <div class="fl">
-                    <ul>
-                        <li>Welcome!&nbsp; &nbsp;</li>
-        
-                        <li>
-                            <a href="javascript:;">Sign In</a> /
-                            <a href="javascript:;" class="style_red">Sign Up</a>
-                        </li>
-                    </ul>
-                </div>
-        
-        
-                <div class="fr">
-                    <ul>
-                        <li><a href="javascript:;">My Order</a></li>
-                        <li></li>
-                        <li><a href="javascript:;">My Car</a></li>
-                        <li></li>
-                        <li><a href="javascript:;">VIP</a></li>
-                        <li></li>
-                        <li><a href="javascript:;">About Us</a></li>
-                        <li></li>
-                        <li><a href="javascript:;">Navigation <i class="arrow-icon"></i></a>
-                            <ul class="drop_down">
-                                <li><a href="./register.html">Sign In</a> </li>
-                                <li><a href="javascript:;">Sign Up</a> </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-        
+    <section class="shortcut">
+        <div class="w">
+            <div class="fl">
+                <ul>
+                    <li>Welcome!&nbsp; &nbsp;</li>
+
+                    <li>
+                        <a href="javascript:;">Sign In</a> /
+                        <a href="javascript:;" class="style_red">Sign Up</a>
+                    </li>
+                </ul>
             </div>
-        </section>
-        
-        <header class="header w">
-            <div class="logo">
-                <h1><a href="{{ url_for('redirect_home') }}" title="Shopping">Shopping</a></h1>
+
+
+            <div class="fr">
+                <ul>
+                    <li><a href="javascript:;">My Order</a></li>
+                    <li></li>
+                    <li><a href="javascript:;">My Car</a></li>
+                    <li></li>
+                    <li><a href="javascript:;">VIP</a></li>
+                    <li></li>
+                    <li><a href="javascript:;">About Us</a></li>
+                    <li></li>
+                    <li><a href="javascript:;">Navigation <i class="arrow-icon"></i></a>
+                        <ul class="drop_down">
+                            <li><a href="./register.html">Sign In</a> </li>
+                            <li><a href="javascript:;">Sign Up</a> </li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
-            <div class="clock">
-                <i class="far fa-clock"></i>
-                <p>Lowest Price</p>
-            </div>
-            <div class="search">
-                <input type="search" placeholder="Search">
-                <button><i class="fas fa-search"></i>
-                </button>
-            </div>
-            <div class="hotWords ">
-                <a href="javascript:;">iPhone12</a>
-                <a href="javascript:;">iPhone12Pro</a>
-                <a href="javascript:;">MacBook</a>
-                <a href="javascript:;">Airpod</a>
-                <a href="javascript:;">iPad</a>
-                <a href="javascript:;">iphone12Case</a>
-                <a href="javascript:;">iPhone12ProCase</a>
-            </div>
-        
-            <div class="shopCar">
-                <i class="fas fa-shopping-cart style_bule"></i>
-                <a href="/templates/shoppingcart.html">My Shopping Cart</a>
-               
-                <i class="count">9</i>
-            </div>
-        </header>
-        
-        <nav class="nav">
-            <div class="w">
-                <!-- <div class="dropdown">
+
+        </div>
+    </section>
+
+    <header class="header w">
+        <div class="logo">
+            <h1><a href="{{ url_for('redirect_home') }}" title="Shopping">Shopping</a></h1>
+        </div>
+        <div class="clock">
+            <i class="far fa-clock"></i>
+            <p>Lowest Price</p>
+        </div>
+        <div class="search">
+            <input type="search" placeholder="Search">
+            <button><i class="fas fa-search"></i>
+            </button>
+        </div>
+        <div class="hotWords ">
+            <a href="javascript:;">iPhone12</a>
+            <a href="javascript:;">iPhone12Pro</a>
+            <a href="javascript:;">MacBook</a>
+            <a href="javascript:;">Airpod</a>
+            <a href="javascript:;">iPad</a>
+            <a href="javascript:;">iphone12Case</a>
+            <a href="javascript:;">iPhone12ProCase</a>
+        </div>
+
+        <div class="shopCar">
+            <i class="fas fa-shopping-cart style_bule"></i>
+            <a href="/templates/shoppingcart.html">My Shopping Cart</a>
+
+            <i class="count">9</i>
+        </div>
+    </header>
+
+    <nav class="nav">
+        <div class="w">
+            <!-- <div class="dropdown">
                     <div class="dt">
                         All Categories
                     </div>
@@ -120,21 +120,21 @@
                         </ul>
                     </div>
                 </div> -->
-                <div class="navitems">
-                    <ul>
-                        <li><a href="javascript:;">Brands</a></li>
-                        <li><a href="javascript:;">Deals</a></li>
-                        <li><a href="javascript:;">Services</a></li>
-                    </ul>
-                </div>
+            <div class="navitems">
+                <ul>
+                    <li><a href="javascript:;">Brands</a></li>
+                    <li><a href="javascript:;">Deals</a></li>
+                    <li><a href="javascript:;">Services</a></li>
+                </ul>
             </div>
-        </nav>
+        </div>
+    </nav>
 
 
-        <div class="w sale_box">
-            <img src="{{ url_for('static',filename='upload/phone.png') }}" alt="">
-            <div class="phone_box">
-                <!-- <ul>
+    <div class="w sale_box">
+        <img src="{{ url_for('static',filename='upload/phone.png') }}" alt="">
+        <div class="phone_box">
+            <!-- <ul>
                     <li>
                         <div class="small_box">
                             <img src="{{ url_for('static',filename='upload/IP12.png') }}" alt="">
@@ -350,8 +350,8 @@
                             </div>
                     </li>
                 </ul> -->
-            </div>
         </div>
+    </div>
 
 
 
@@ -377,13 +377,13 @@
                             <p>Return unconditionally within 14 days</p>
                         </div>
                     </li>
-    
+
                     <li><i class="fas fa-star"></i>
                         <div>
                             <h3>VIP service</h3>
                             <p>VIP has more privileges</p>
                         </div>
-    
+
                     </li>
                 </ul>
             </div>
@@ -397,15 +397,15 @@
                     <dd><a href="javascript:;">Trade-In Program</a> </dd>
                     <dd><a href="javascript:;">Product Recalls</a></dd>
                 </dl>
-    
+
                 <dl>
                     <dt>Partnerships ›</dt>
                     <dd><a href="javascript:;">Affiliate Program</a></dd>
                     <dd><a href="javascript:;">Developers</a></dd>
                     <dd><a href="javascript:;">Advertise with Us</a></dd>
                 </dl>
-    
-    
+
+
                 <dl>
                     <dt>Orders & Returns ›</dt>
                     <dd><a href="javascript:;">Order Status</a></dd>
@@ -413,9 +413,9 @@
                     <dd><a href="javascript:;">Return & Exchange Promise</a></dd>
                     <dd><a href="javascript:;">Price Match Guarantee</a></dd>
                 </dl>
-    
-    
-    
+
+
+
                 <dl>
                     <dt>My Shopping ›</dt>
                     <dd><a href="javascript:;">View Points & Certificates</a></dd>
@@ -424,7 +424,7 @@
                 </dl>
             </div>
         </div>
-    
+
         <div class="mod_copyRight">
             <div class="w">
                 <div class="links">
@@ -445,6 +445,7 @@
             </div>
         </div>
     </footer>
-    
+
 </body>
+
 </html>

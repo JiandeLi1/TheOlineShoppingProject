@@ -77,7 +77,7 @@ def login():
             return jsonify({'status' : 'fails',"description" : "Invalid username or password."}), 400
         if user_ditc['password'] == password:
             logger.info('username : %s password is match.', username)
-            return json.dumps({'status' : 'success','redirctUrl' : '/'}), 200
+            return json.dumps({'status' : 'success','username' : username, 'redirctUrl' : '/'}), 200
         
         logger.info('Invalid password.')
         return jsonify({'status' : 'fails',"description" : "Invalid username or password."}), 400
@@ -215,6 +215,37 @@ def updateProducts():
         logger.info('update success.')
         return db_res, 200
 
+@app.route("/searchProduct",methods=['POST'])
+def searchProduct():
+    logger.info('search product page.')
+    res = request.form
+    print(res)
+    try:
+        itemName = res['itemName']
+    except Exception as e:
+        print(e)
+        return json.dumps([]), 404
+
+    print("itemName :",itemName)
+
+    if len(itemName) < 3:
+        return json.dumps({'status' : 'error','description' : 'itemName too short.'}), 404
+
+    db_res = db.findProductsByPortion(itemName)
+
+    if 'error' in db_res:
+        logger.info(json.dumps(db_res)), 404
+    return db_res, 200
+
+@app.route("/listProduct",methods=['GET'])
+def listProduct():
+        db_res = db.getAllProducts()
+        return db_res, 200
+    # return json.dumsp({'status' : 'fails'}), 404
+
+@app.route("/search", methods=["GET"])
+def redirect_search():
+    return render_template("search.html",name=None)
 
 """
 --------------------------- user purchase history ---------------------------------------
