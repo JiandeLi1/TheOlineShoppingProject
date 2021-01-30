@@ -219,19 +219,39 @@ def updateProducts():
 def searchProduct():
     logger.info('search product page.')
     res = request.form
-    print(res)
     try:
         itemName = res['itemName']
     except Exception as e:
-        print(e)
+        logger.info('No valid paramater found.')
         return json.dumps([]), 404
-
-    print("itemName :",itemName)
 
     if len(itemName) < 3:
         return json.dumps({'status' : 'error','description' : 'itemName too short.'}), 404
 
     db_res = db.findProductsByPortion(itemName)
+
+    if 'error' in db_res:
+        logger.info(json.dumps(db_res)), 404
+    return db_res, 200
+
+"""
+Find product with same prefix, up to 5 product will be return.
+For search bar to showing result without press.
+"""
+@app.route("/searchProductByPrefix",methods=['POST'])
+def searchProductByPrefix():
+    logger.info('search product page.')
+    res = request.form
+    try:
+        itemName = res['itemName']
+    except Exception as e:
+        logger.info('No valid parameter found.')
+        return json.dumps([]), 404
+
+    if len(itemName) == 0:
+        return json.dumps({'status' : 'error','description' : 'empty prefix not allow.'}), 404
+
+    db_res = db.findProductsByPrefix(itemName)
 
     if 'error' in db_res:
         logger.info(json.dumps(db_res)), 404

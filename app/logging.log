@@ -1,12 +1,4 @@
-2021-01-30 07:04:14,139 - db - INFO - findProductsByPortion method is called.
-2021-01-30 07:04:14,139 - db - INFO - Start gett2021-01-30 07:04:51,673 - __main__ - INFO - render home page
-2021-01-30 07:04:55,623 - __main__ - INFO - search product page.
-2021-01-30 07:04:58,528 - __main__ - INFO - render home page
-2021-01-30 07:05:03,725 - __main__ - INFO - search product page.
-:04:55,623 - db - INFO - Start getting share lock.
-2021-01-30 07:04:55,788 - db - INFO - finished getting share lock.
-2021-01-30 07:04:55,788 - db - INFO - Find items success, now return results.
-2021-01-30 07:05:03,725 - db - INFO - findProductsByPortion method is called.
-2021-01-30 07:05:03,725 - db - INFO - Start getting share lock.
-2021-01-30 07:05:03,760 - db - INFO - finished getting share lock.
-2021-01-30 07:05:03,760 - db - INFO - Find items success, now return results.
+2021-01-30 08:57:28,778 - db - INFO - findProductsByPrefix method is called.
+2021-01-30 08:57:28,778 - db - INFO - Start getting share lock.
+2021-01-30 08:57:29,125 - db - INFO - finished getting share lock.
+2021-01-30 08:57:29,125 - db - INFO - Find items success, now return results.

@@ -125,7 +125,7 @@ def findUserByPrefix(prefix):
     session = Session_factory()
     parameter = '{}%'.format(prefix)
     print(parameter)
-    users = session.query(data_models.User).filter(data_models.User.username.like(parameter)).all()
+    users = session.query(data_models.User).with_for_update(nowait = False,read = True).filter(data_models.User.username.like(parameter)).all()
     logger.info('finished getting share lock.')
 
     if users == None:
@@ -203,7 +203,7 @@ def updateProducts(datas):
 
     logger.info('start getting mutex lock.')
     session = Session_factory()
-    items = session.query(data_models.Item).with_for_update(nowait = False,read = True).filter(data_models.Item.itemName.in_(itemNames)).all()
+    items = session.query(data_models.Item).with_for_update(nowait = False).filter(data_models.Item.itemName.in_(itemNames)).all()
 
     for item in items:
         itemName = item.itemName
@@ -234,7 +234,23 @@ def findProductsByPortion(itemName):
     session = Session_factory()
     parameter = '%{}%'.format(itemName)
     # print(parameter)
-    items = session.query(data_models.Item).filter(data_models.Item.itemName.like(parameter)).all()
+    items = session.query(data_models.Item).with_for_update(nowait = False,read = True).filter(data_models.Item.itemName.like(parameter)).all()
+    logger.info('finished getting share lock.')
+
+    if items == None:
+        logger.error('No items found.')
+        return json.dumps({'error' : 'No items found.'})
+
+    logger.info('Find items success, now return results.')
+    return json.dumps(items,default = lambda x : x.serialize())
+
+def findProductsByPrefix(prefix):
+    logger.info('findProductsByPrefix method is called.')
+    logger.info('Start getting share lock.')
+    session = Session_factory()
+    parameter = '{}%'.format(prefix)
+    # print(parameter)
+    items = session.query(data_models.Item).with_for_update(nowait = False,read = True).filter(data_models.Item.itemName.like(parameter)).limit(1).all()
     logger.info('finished getting share lock.')
 
     if items == None:

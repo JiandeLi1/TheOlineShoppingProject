@@ -51,13 +51,13 @@ window.addEventListener('load', function () {
         var res = JSON.parse(xhr.responseText);
         var products = '<ul>';
 
-        for(var i = 0;i < res.length;i++){
-          let itemName = res[i].itemName;
-          let price = res[i].price;
-          let amount = res[i].amount;
-          let itemImageUrl = res[i].itemImageUrl;
+        res.forEach((item) => {
+          let itemName = item.itemName;
+          let price = item.price;
+          let amount = item.amount;
+          let itemImageUrl = item.itemImageUrl;
           products+= "<li><div class='small_box'><img src='" + itemImageUrl + " ' alt=''><p>" + itemName + "</p><div class='price'>$" + price + "<span>$" + (price + 100.00) + "</span><div class='sold'><span class='sold_percen'>Sold " + amount + "%</span><span class='bar'><div></div></span><span class='sold_percen'>" + (100 - amount) + " left</span></div><button class='buy_product'><a href='javascript:;'>Buy Now!</a></button></div></li>"
-        }
+        });
         products+= "</ul>";
         phone_box.innerHTML=products;
 
