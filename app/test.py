@@ -11,8 +11,8 @@ fake_users = {
 }
 
 fake_product = {
-    'iphone' : {'price' : 999.99, 'amount' : 50, 'itemImageUrl' : 'https://m.media-amazon.com/images/I/51m095zShrL._AC_SX466_.jpg'},
-    'iphone12' : {'price' : 1299.99, 'amount' : 25, 'itemImageUrl' : 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-12-pro-family-hero?wid=940&amp;hei=1112&amp;fmt=jpeg&amp;qlt=80&amp;op_usm=0.5,0.5&amp;.v=1604021663000'}
+   'iphone': {'price' : 999.99, 'amount' : 50, 'itemImageUrl' : 'https://m.media-amazon.com/images/I/51m095zShrL._AC_SX466_.jpg'},
+  'iphone12':{'price' : 1299.99, 'amount' : 25, 'itemImageUrl' : 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-12-pro-family-hero?wid=940&amp;hei=1112&amp;fmt=jpeg&amp;qlt=80&amp;op_usm=0.5,0.5&amp;.v=1604021663000'}
 }
 
 fake_purchaseHistory = {
@@ -42,7 +42,11 @@ fake_userIDNameMap = {
 # Showing the home page.
 @app.route("/", methods=["GET"])
 def redirect_home():
-    return render_template("index.html",name=None)
+    return render_template("index.html", name=None)
+
+@app.route("/search", methods=["GET"])
+def redirect_search():
+    return render_template("search.html",name=None)
 
 """
 check username is exist or not,
@@ -109,6 +113,19 @@ def checkout():
             if not amountEnough:
                 return json.dumps({'status' : 'fails','description' : '%s Product not enough.' % data['itemName']}), 404
         return json.dumps({'status' : 'success','redirctUrl' : '/'}), 200
+
+@app.route("/listProduct",methods=['GET'])
+def listProduct():
+        return json.dumps(fake_product), 200
+    # return json.dumsp({'status' : 'fails'}), 404
+
+@app.route("/getProduct",methods=['POST'])
+def getProduct():
+    res = request.form
+    itemName = res['itemName']
+    if itemName in fake_product:
+        return json.dumps(fake_product[itemName]), 200
+    return json.dumps({'status' : 'fails'}), 404
 
 """
 Check user's history by username,
