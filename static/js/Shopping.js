@@ -4,17 +4,18 @@ window.addEventListener('load', function () {
 		var phone_box = document.querySelector(".phone_box");
 			
 		var xhr = new XMLHttpRequest();
-      xhr.open("GET", "/listProduct");
+      xhr.open("GET", "/allProducts");
 		// xhr.setRequestHeader("Content-type", "application/json");
 		xhr.send();
 		xhr.onreadystatechange = function () {
 			if (xhr.readyState == 4 && xhr.status == 200) {
         var res = xhr.responseText;
         // var res = JSON.stringify(res);
-        var endIndex = res.length-2;
-        var sub = res.substring(0,endIndex);
+        var endIndex = res.length-3;
+        var sub = res.substring(31,endIndex);
         var arr = sub.split("},");
         var product = '<ul>';
+        console.log(res);
         console.log(sub);
          console.log(arr);
 
@@ -25,18 +26,18 @@ window.addEventListener('load', function () {
           var a = ar[0].split(":"); 
           var c = '';
 
-          if (ar.length > 3) {
-            for (let b = 3; b < ar.length; b++) { 
-              ar[2] += ar[b];
-            }
-          }
+          // if (ar.length > 4) {
+          //   for (let b = 3; b < ar.length; b++) { 
+          //     ar[2] += ar[b];
+          //   }
+          // }
 
 
           console.log(ar);
-          console.log(ar[2]);
-           console.log(a);
+          console.log(ar[3]);
+           console.log(ar[3].substring(17, ar[3].length-1));
 
-          c = "<li><div class='small_box'><img src='" + ar[2].substring(18, ar[2].length - 1) + " ' alt=''><p>" + a[0].substring(2, a[0].length - 1) + "</p><div class='price'>$" + a[2].substring(1) + "<span>$" + (parseInt(a[2].substring(1)) + 100) + "</span><div class='sold'><span class='sold_percen'>Sold " + ar[1].substring(10) + "%</span><span class='bar'><div></div></span><span class='sold_percen'>" + (100 - parseInt(ar[1].substring(10))) + " left</span></div><button class='buy_product'><a href='javascript:;'>Buy Now!</a></button></div></li>"
+          c = "<li><div class='small_box'><img src='" + ar[3].substring(18, ar[3].length-1) + " ' alt=''><p>" + ar[0].substring(15, ar[0].length - 1) + "</p><div class='price'>$" + ar[1].substring(9) + "<span>$" + (parseInt( ar[1].substring(9)) + 100) + "</span><div class='sold'><span class='sold_percen'>Sold " + ar[2].substring(10) + "%</span><span class='bar'><div></div></span><span class='sold_percen'>" + (100 - parseInt(ar[2].substring(10))) + " left</span></div><button class='buy_product'><a href='javascript:;'>Buy Now!</a></button></div></li>"
           product += c;
           }
         product += "</ul>";
@@ -103,20 +104,30 @@ window.addEventListener('load', function () {
  
      
  
-      function count(flag) {
-        let count = localStorage.getItem('count')?JSON.parse(localStorage.getItem('count')).count:0;
+      // function count(flag) {
+      //   let count = localStorage.getItem('count')?JSON.parse(localStorage.getItem('count')).count:0;
         
-        let countObj = {
-            Name: "iphone",
-            price: 1200,
-            amount: 1
-        }
+      //   let countObj = {
+      //       Name: "iphone",
+      //       price: 1200,
+      //       amount: 1
+      //   }
         
-          localStorage.setItem('count', JSON.stringify(countObj))
-          console.log(localStorage.getItem('count'));
-      }
+      //     localStorage.setItem('count', JSON.stringify(countObj))
+      //     console.log(localStorage.getItem('count'));
+      // }
         
-    
+  let aaa = 'hh';
+
+
+  var clock = document.querySelector('.clock');
+
+  clock.onclick=function(){ 
+    aaa = 'ABCD';
+    console.log(aaa);
+  };
+
+  exports = {aaa}
     
     
     
