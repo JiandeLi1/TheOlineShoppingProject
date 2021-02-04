@@ -4,7 +4,9 @@ window.addEventListener('load', function () {
     var phone_box = document.querySelector(".phone_box");
 			
     var res = localStorage.getItem('search');
-        
+    
+   
+    
       
     if (res != '<h1 style="font-size:20px;">No result</h1>') {
 

@@ -329,6 +329,11 @@ def hello_world():
     print("hello world")
     return 'hello, world!'
 
+
+@app.route("/search", methods=["GET"])
+def redirect_search():
+    return render_template("search.html",name=None)
+
 if __name__ == "__main__":
     webbrowser.open_new("localhost:8080")
     app.run("localhost", 8080, debug=True)
