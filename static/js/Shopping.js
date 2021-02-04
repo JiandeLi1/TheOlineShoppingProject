@@ -4,7 +4,7 @@ window.addEventListener('load', function () {
   var phone_box = document.querySelector(".phone_box");
     
   var xhr = new XMLHttpRequest();
-    xhr.open("GET", "/listProduct");
+    xhr.open("GET", "/allProducts");
   // xhr.setRequestHeader("Content-type", "application/json");
   xhr.send();
   xhr.onreadystatechange = function () {

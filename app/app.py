@@ -168,7 +168,7 @@ def getAllProducts():
         logger.info('No product found.')
         return jsonify({'status' : 'error','description' : 'no product found.'}), 404
     logger.info('Find all products.')
-    return json.dumps({'status' : 'success','itmes' : json.loads(items)}), 200
+    return items, 200
 
 @app.route("/getProduct",methods=['POST'])
 def getProduct():
@@ -330,9 +330,9 @@ def hello_world():
     return 'hello, world!'
 
 
-@app.route("/search", methods=["GET"])
-def redirect_search():
-    return render_template("search.html",name=None)
+# @app.route("/search", methods=["GET"])
+# def redirect_search():
+#     return render_template("search.html",name=None)
 
 if __name__ == "__main__":
     webbrowser.open_new("localhost:8080")

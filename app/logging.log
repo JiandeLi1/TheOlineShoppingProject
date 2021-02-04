@@ -1,4 +1,13 @@
-2021-01-30 08:57:28,778 - db - INFO - findProductsByPrefix method is called.
-2021-01-30 08:57:28,778 - db - INFO - Start getting share lock.
-2021-01-30 08:57:29,125 - db - INFO - finished getting share lock.
-2021-01-30 08:57:29,125 - db - INFO - Find items success, now return results.
+2021-02-04 17:48:59,313 - __main__ - INFO - Find all products.
+2021-02-04 17:48:59,313 - __main__ - INFO - Find all products.
+2021-02-04 17:49:05,216 - __main__ - INFO - search product page.
+2021-02-04 17:49:05,216 - __main__ - INFO - No valid paramater found.
+2021-02-04 17:49:08,568 - __main__ - INFO - search product page.
+2021-02-04 17:49:12,868 - __main__ - INFO - render home page
+ng share lock.
+2021-02-04 17:48:59,313 - db - INFO - Find all items from DB.
+2021-02-04 17:48:59,313 - db - INFO - Find all items from DB.
+2021-02-04 17:49:08,572 - db - INFO - findProductsByPortion method is called.
+2021-02-04 17:49:08,572 - db - INFO - Start getting share lock.
+2021-02-04 17:49:08,607 - db - INFO - finished getting share lock.
+2021-02-04 17:49:08,607 - db - INFO - Find items success, now return results.
