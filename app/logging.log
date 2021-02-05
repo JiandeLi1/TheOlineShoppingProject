@@ -1,14 +1,5 @@
-2021-02-04 18:56:53,654 - db - INFO - getProduct method is called.
-2021-02-04 18:56:53,654 - db - INFO - start getting share lock.2021-02-04 18:56:54,322 - __main__ - INFO - error happend.
-2021-02-04 18:57:26,991 - __main__ - INFO - trying to find pr2021-02-04 18:2021-02-04 18:57:27,105 - __main__ - INFO - Product iphone found.
-2021-02-04 18:58:05,666 - __main__ - INFO - render home page
-2021-02-04 18:59:46,206 - __main__ - INFO - Find all products.
-2021-02-04 18:59:46,462 - __main__ - INFO - Find all products.
-2021-02-04 19:10:11,654 - __main__ - INFO - render home page
-21-02-04 18:59:46,112 - db - INFO - start getting share lock.
-2021-02-04 18:59:46,178 - db - INFO - finish getting share lock.
-2021-02-04 18:59:46,206 - db - INFO - Find all items from DB.
-2021-02-04 18:59:46,376 - db - INFO - getAllProducts methods is called.
-2021-02-04 18:59:46,376 - db - INFO - start getting share lock.
-2021-02-04 18:59:46,436 - db - INFO - finish getting share lock.
-2021-02-04 18:59:46,462 - db - INFO - Find all items from DB.
+2021-02-04 20:39:29,740 - __main__ - INFO - render home page
+2021-02-04 20:39:35,362 - __main__ - INFO - search product page.
+2021-02-04 20:39:35,363 - __main__ - INFO - No valid paramater found.
+2021-02-04 20:39:42,138 - __main__ - INFO - search product page.
+2021-02-04 20:39:42,138 - __main__ - INFO - No valid paramater found.

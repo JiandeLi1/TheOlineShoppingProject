@@ -5,7 +5,7 @@ window.addEventListener('load', function () {
     console.log(product.value);
     btn.addEventListener('click', function () {
         var xhr = new XMLHttpRequest();
-        xhr.open("POST", "/getProduct");
+        xhr.open("POST", "/searchProduct");
 		xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xhr.send("itemName=" + product.value);
 		xhr.onreadystatechange = function () {
@@ -16,6 +16,7 @@ window.addEventListener('load', function () {
                     let search = localStorage.getItem('search') ? localStorage.removeItem('search') : 0;
                 
                     localStorage.setItem('search', (product.value+":"+res))
+                    // localStorage.setItem('search', res);
                     console.log(localStorage.getItem('search'));
                     window.location.href = "/search";
 				}
@@ -31,7 +32,8 @@ window.addEventListener('load', function () {
                     var li = '<h1 style="font-size:20px;">No result</h1>';
                     localStorage.setItem('search', li)
                      window.location.href = "/search";
-				}
-		}
+                }
+        }
+        return false;
     })
 })

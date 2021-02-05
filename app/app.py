@@ -77,7 +77,7 @@ def login():
             return jsonify({'status' : 'fails',"description" : "Invalid username or password."}), 400
         if user_ditc['password'] == password:
             logger.info('username : %s password is match.', username)
-            return json.dumps({'status' : 'success','redirctUrl' : '/'}), 200
+            return json.dumps({'status' : 'success','username' : username, 'redirctUrl' : '/'}), 200
         
         logger.info('Invalid password.')
         return jsonify({'status' : 'fails',"description" : "Invalid username or password."}), 400
@@ -168,7 +168,7 @@ def getAllProducts():
         logger.info('No product found.')
         return jsonify({'status' : 'error','description' : 'no product found.'}), 404
     logger.info('Find all products.')
-    return json.dumps({'status' : 'success','itmes' : json.loads(items)}), 200
+    return items, 200
 
 @app.route("/getProduct",methods=['POST'])
 def getProduct():
@@ -215,6 +215,57 @@ def updateProducts():
         logger.info('update success.')
         return db_res, 200
 
+@app.route("/searchProduct",methods=['POST'])
+def searchProduct():
+    logger.info('search product page.')
+    res = request.form
+    try:
+        itemName = res['itemName']
+    except Exception as e:
+        logger.info('No valid paramater found.')
+        return json.dumps([]), 404
+
+    if len(itemName) < 3:
+        return json.dumps({'status' : 'error','description' : 'itemName too short.'}), 404
+
+    db_res = db.findProductsByPortion(itemName)
+
+    if 'error' in db_res:
+        logger.info(json.dumps(db_res)), 404
+    return db_res, 200
+
+"""
+Find product with same prefix, up to 5 product will be return.
+For search bar to showing result without press.
+"""
+@app.route("/searchProductByPrefix",methods=['POST'])
+def searchProductByPrefix():
+    logger.info('search product page.')
+    res = request.form
+    try:
+        itemName = res['itemName']
+    except Exception as e:
+        logger.info('No valid parameter found.')
+        return json.dumps([]), 404
+
+    if len(itemName) == 0:
+        return json.dumps({'status' : 'error','description' : 'empty prefix not allow.'}), 404
+
+    db_res = db.findProductsByPrefix(itemName)
+
+    if 'error' in db_res:
+        logger.info(json.dumps(db_res)), 404
+    return db_res, 200
+
+@app.route("/listProduct",methods=['GET'])
+def listProduct():
+        db_res = db.getAllProducts()
+        return db_res, 200
+    # return json.dumsp({'status' : 'fails'}), 404
+
+@app.route("/search", methods=["GET"])
+def redirect_search():
+    return render_template("search.html",name=None)
 
 """
 --------------------------- user purchase history ---------------------------------------
@@ -279,9 +330,9 @@ def hello_world():
     return 'hello, world!'
 
 
-@app.route("/search", methods=["GET"])
-def redirect_search():
-    return render_template("search.html",name=None)
+# @app.route("/search", methods=["GET"])
+# def redirect_search():
+#     return render_template("search.html",name=None)
 
 if __name__ == "__main__":
     webbrowser.open_new("localhost:8080")

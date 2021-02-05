@@ -77,11 +77,13 @@
         </div>
         <form id="subFrom"
                 class="searchForm"
-                action="getProduct"
-                method="post"
+
+                action="searchProduct"
+                method="POST"
                 enctype="multipart/form-data">
             <div class="search">
                 <input type="search" placeholder="Search">
+                <!-- change button type from submit to button, avoid double submit -->
                 <button  class="submitbtn" type="button" value="Sumbit"><i class="fas fa-search"></i>
                 </button>
             </div>
