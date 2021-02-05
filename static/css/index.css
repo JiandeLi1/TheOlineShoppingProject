@@ -22,7 +22,12 @@
     height: 455px;
     /* border: 1px solid #e4e4e4; */
 }
-
+.logout{
+    display: none;
+    margin-left: 15px;
+    color: red;
+    cursor: pointer;
+}
 .news{
     height: 160px;
     border: 1px solid #e4e4e4;

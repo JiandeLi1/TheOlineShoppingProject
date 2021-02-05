@@ -16,6 +16,7 @@
     <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static',filename='js/show_id.js') }}"></script>
     
 
 
@@ -33,19 +34,23 @@
         <div class="w">
             <div class="fl">
                 <ul>
-                    <li>Welcome!&nbsp; &nbsp;</li>
-    
-                    <li>
-    
+                    <li class="show_id">Welcome!&nbsp; &nbsp;</li>
+                
+                    <li class='log'>
+                
                         <!-- <a href="./login.html">Sign In</a> /
-                            <a href="./register.html" class="style_red">Sign Up</a> -->
-    
+                                        <a href="./register.html" class="style_red">Sign Up</a> -->
+                
                         <a href="./login">Sign In</a> /
                         <!-- <a href="/register" class="style_red">Sign Up</a> -->
                         <form method="get" action="/register" style="display: inline;">
                             <input type="submit" name="Sign up" class="button2" value="Sign up" title="Register">
                         </form>
-    
+                
+                    </li>
+                
+                    <li class="logout">
+                        logout
                     </li>
                 </ul>
             </div>

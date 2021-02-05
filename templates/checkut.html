@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="{{ url_for('static',filename='css/checkout.css') }}">
     <script src="{{ url_for('static',filename='js/checkout.js') }}"></script>
     <script src="/static/js/checkout.js"></script>
+    <script src="{{ url_for('static',filename='js/show_id.js') }}"></script>
 </head>
 <body>
         <div id="shoppingcart_section">
@@ -32,19 +33,23 @@
             <div class="w">
                 <div class="fl">
                     <ul>
-                        <li>Welcome!&nbsp; &nbsp;</li>
-        
-                        <li>
-        
+                        <li class="show_id">Welcome!&nbsp; &nbsp;</li>
+                    
+                        <li class='log'>
+                    
                             <!-- <a href="./login.html">Sign In</a> /
-                                    <a href="./register.html" class="style_red">Sign Up</a> -->
-        
+                                            <a href="./register.html" class="style_red">Sign Up</a> -->
+                    
                             <a href="./login">Sign In</a> /
                             <!-- <a href="/register" class="style_red">Sign Up</a> -->
                             <form method="get" action="/register" style="display: inline;">
                                 <input type="submit" name="Sign up" class="button2" value="Sign up" title="Register">
                             </form>
-        
+                    
+                        </li>
+                    
+                        <li class="logout">
+                            logout
                         </li>
                     </ul>
                 </div>

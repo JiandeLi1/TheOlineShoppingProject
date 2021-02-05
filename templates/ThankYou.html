@@ -12,6 +12,7 @@
     <script src="https://kit.fontawesome.com/1d299bbc93.js" crossorigin="anonymous"></script>
     <!-- <script src="/static/js/cart.js"></script> -->
     <script src="{{ url_for('static',filename='js/ThankYou.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/show_id.js') }}"></script>
     
     
     
@@ -30,19 +31,23 @@
             <div class="w">
                 <div class="fl">
                     <ul>
-                        <li>Welcome!&nbsp; &nbsp;</li>
-    
-                        <li>
-    
+                        <li class="show_id">Welcome!&nbsp; &nbsp;</li>
+                    
+                        <li class='log'>
+                    
                             <!-- <a href="./login.html">Sign In</a> /
-                                <a href="./register.html" class="style_red">Sign Up</a> -->
-    
+                                            <a href="./register.html" class="style_red">Sign Up</a> -->
+                    
                             <a href="./login">Sign In</a> /
                             <!-- <a href="/register" class="style_red">Sign Up</a> -->
                             <form method="get" action="/register" style="display: inline;">
                                 <input type="submit" name="Sign up" class="button2" value="Sign up" title="Register">
                             </form>
-    
+                    
+                        </li>
+                    
+                        <li class="logout">
+                            logout
                         </li>
                     </ul>
                 </div>

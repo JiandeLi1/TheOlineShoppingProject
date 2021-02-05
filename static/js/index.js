@@ -2,6 +2,9 @@ window.addEventListener('load', function () {
     var arrow_l = document.querySelector('.arrow-l');
     var arrow_r = document.querySelector('.arrow-r');
     var focus = document.querySelector('.focus');
+    // var show_id = document.querySelector('.show_id');
+    // var logout = document.querySelector('.logout');
+    // var log = document.querySelector('.log');
     focus.addEventListener('mouseenter', function () { 
         arrow_l.style.display = 'block';
         arrow_r.style.display = 'block';
@@ -173,6 +176,23 @@ window.addEventListener('load', function () {
     back.addEventListener('click', function () { 
         go_black(window,0);
     });
+
+
+
+    // if (localStorage.getItem('user')) {
+    //     show_id.innerHTML = 'Hi! '+localStorage.getItem('user');
+    //     log.style.display = 'none';
+    //     logout.style.display = 'inline-block';
+    // } 
+
+
+    // logout.addEventListener('click', () => { 
+    //      show_id.innerHTML = 'Welcome!&nbsp; &nbsp;'
+    //     show_id.innerHTML = localStorage.removeItem('user');
+    //     logout.style.display = 'none';
+    //     log.style.display = 'inline-block';
+    // })
+
 
 
 
