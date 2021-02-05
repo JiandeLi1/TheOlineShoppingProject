@@ -152,17 +152,21 @@ window.addEventListener('load', function () {
 		var input_username = username.value;
         var input_password = password.value;
         var input_email = email.value;
+
      if (check_comfirm()) {
          var xhr = new XMLHttpRequest();
          xhr.open("POST", "/register");
          xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-         xhr.send("email=" + input_email + "&userName=" + input_username + "&passWord=" + md5(input_password));
+
+        // can't send parameters with md5 decrypt.
+        //  xhr.send("email=" + input_email + "&userName=" + input_username + "&passWord=" + md5(input_password));
+        xhr.send("email=" + input_email + "&userName=" + input_username + "&passWord=" + input_password);
          xhr.onreadystatechange = function () {
              if (xhr.readyState == 4 && xhr.status == 200) {
                 var res = JSON.parse(xhr.responseText);
                 if(res.status == 'success'){
                     alert("registration success!");
-                    // Should be check it 'res.redirctUrl' exist first.
+                    // Should check 'res.redirctUrl' exist first.
                     window.location.href = res.redirctUrl;
                 }
                 else {

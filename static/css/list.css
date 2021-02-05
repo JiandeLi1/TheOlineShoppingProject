@@ -54,6 +54,9 @@
     font-size: 16px;
 }
 
+.phone_box ul li .small_box img{
+    width: 288px;
+    height: 349px;}
 
 .phone_box ul li .small_box .price{
     

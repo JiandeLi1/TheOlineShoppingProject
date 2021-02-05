@@ -5,7 +5,10 @@ The front-End for this project, I will not use any tools or framework because th
 This is a branch that add Backend server to this project.
 See if it is ok.
 
+
+
 ## How to deploy backend server?
+
 1. Install latest python3 on your computer.
 https://www.python.org/downloads/
 
@@ -50,6 +53,7 @@ pip install requirements.txt
 ```
 
 4. Run the server
+
 Mac OS:
 ```
 python3 test.py
@@ -58,6 +62,7 @@ Windows:
 ```
 py test.py
 ```
+
 
 ## When use database
 Because we are using local database, you have to make sure you already install mysql database first.
@@ -72,6 +77,11 @@ mydb = mysql.connector.connect(
         )
 ```
 
+## Update Log
+date: 01-16-2021
+Add basic backend function to this project.
+Connect database when user to register, use mysql database.
+=======
 Since id key set as AUTO_INCREMENT, that means if table is not empty, you can add entry into table without id parameter.
 If table is empty, you have to insert a entry into table first, than the program will work.
 
@@ -119,6 +129,7 @@ Connect database when user to register, use mysql database.
 
 date: 01-16-2021
 Add find/update/delete functions to Backend.
+
 
 data: 01-18-2021
 Create a new branch online, this branch is for test deploy this project to online server platform.
