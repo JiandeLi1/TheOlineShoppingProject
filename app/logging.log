@@ -1,5 +1,66 @@
-2021-02-04 20:39:29,740 - __main__ - INFO - render home page
-2021-02-04 20:39:35,362 - __main__ - INFO - search product page.
-2021-02-04 20:39:35,363 - __main__ - INFO - No valid paramater found.
-2021-02-04 20:39:42,138 - __main__ - INFO - search product page.
-2021-02-04 20:39:42,138 - __main__ - INFO - No valid paramater found.
+2021-02-04 20:51:38,923 - db - INFO - findProductsByPortion method is called.
+2021-02-04 20:51:38,923 - db - INFO - Start getting share lock.
+2021-02-04 20:51:39,461 - db - INFO - finished getting share lock.
+2021-02-04 20:51:39,461 - db - INFO - Find items succ2021-02-04 20:51:45,200 - 2021-02-04 20:51:54,610 - db - INFO - findProductsByPortion method is called.
+2021-02-04 20:51:54,610 - db - INFO - Start getting share lock.
+2021-02-04 20:51:54,833 - db - INFO - finished getting share lock.
+2021-02-04 20:51:54,833 - d2021-02-04 20:51:56,795 - __main__ - INFO - render h2021-02-042021-02-04 20:51:59,852 - __main__ - INFO - Find all products.
+2021-02-04 20:52:00,273 - __main__ - INFO - Find all products.
+2021-02-04 20:52:42,929 - __main__ - INFO - Find all products.
+2021-02-04 20:52:42,930 - __main__ - INFO - Find all products.
+2021-02-04 21:05:54,096 - __main__ - INFO - Find all products.
+2021-02-04 21:05:54,096 - __main__ - INFO - Find all products.
+2021-02-04 21:07:46,508 - __main__ - INFO - Find all products.
+2021-02-04 21:07:46,509 - __main__ - INFO - Find all products.
+2021-02-04 21:08:17,061 - __main__ - INFO - Find all products.
+2021-02-04 21:08:17,061 - __main__ - INFO - Find all products.
+2021-02-04 21:08:54,262 - __main__ - INFO - render home page
+2021-02-04 21:08:58,652 - __main__ - INFO - Find all products.
+2021-02-04 21:08:59,055 - __main__ - INFO - Find all products.
+2021-02-04 21:09:04,076 - __main__ - INFO - render home page
+2021-02-04 21:09:11,763 - __main__ - INFO - username : abcd, password : 1234
+2021-02-04 21:09:11,866 - __main__ - INFO - Invalid password.
+2021-02-04 21:09:12,065 - __main__ - INFO - username : abcd, password : 1234
+2021-02-04 21:09:12,146 - __main__ - INFO - Invalid password.
+2021-02-04 21:09:24,599 - __main__ - INFO - username : abcd, password : 1234
+2021-02-04 21:09:24,688 - __main__ - INFO - Invalid password.
+2021-02-04 21:09:24,907 - __main__ - INFO - username : abcd, password : 1234
+2021-02-04 21:09:24,990 - __main__ - INFO - Invalid password.
+2021-02-04 21:09:32,334 - __main__ - INFO - username : abcd, password : 123456
+2021-02-04 21:09:32,341 - __main__ - INFO - username : abcd, password : 123456
+2021-02-04 21:09:32,438 - __main__ - INFO - username : abcd password is match.
+2021-02-04 21:09:32,464 - __main__ - INFO - username : abcd password is match.
+2021-02-04 21:09:34,990 - __main__ - INFO - render home page
+ - start getting share lock.
+2021-02-04 21:07:46,473 - db - INFO - finish getting share lock.
+2021-02-04 21:07:46,474 - db - INFO - finish getting share lock.
+2021-02-04 21:07:46,508 - db - INFO - Find all items from DB.
+2021-02-04 21:07:46,509 - db - INFO - Find all items from DB.
+2021-02-04 21:08:16,958 - db - INFO - getAllProducts methods is called.
+2021-02-04 21:08:16,959 - db - INFO - start getting share lock.
+2021-02-04 21:08:16,959 - db - INFO - getAllProducts methods is called.
+2021-02-04 21:08:16,961 - db - INFO - start getting share lock.
+2021-02-04 21:08:17,031 - db - INFO - finish getting share lock.
+2021-02-04 21:08:17,032 - db - INFO - finish getting share lock.
+2021-02-04 21:08:17,060 - db - INFO - Find all items from DB.
+2021-02-04 21:08:17,060 - db - INFO - Find all items from DB.
+2021-02-04 21:08:58,530 - db - INFO - getAllProducts methods is called.
+2021-02-04 21:08:58,530 - db - INFO - start getting share lock.
+2021-02-04 21:08:58,626 - db - INFO - finish getting share lock.
+2021-02-04 21:08:58,652 - db - INFO - Find all items from DB.
+2021-02-04 21:08:58,963 - db - INFO - getAllProducts methods is called.
+2021-02-04 21:08:58,963 - db - INFO - start getting share lock.
+2021-02-04 21:08:59,027 - db - INFO - finish getting share lock.
+2021-02-04 21:08:59,055 - db - INFO - Find all items from DB.
+2021-02-04 21:09:11,763 - db - INFO - getUser method is called.
+2021-02-04 21:09:11,764 - db - INFO - Start getting share lock.
+2021-02-04 21:09:12,065 - db - INFO - getUser method is called.
+2021-02-04 21:09:12,065 - db - INFO - Start getting share lock.
+2021-02-04 21:09:24,599 - db - INFO - getUser method is called.
+2021-02-04 21:09:24,599 - db - INFO - Start getting share lock.
+2021-02-04 21:09:24,907 - db - INFO - getUser method is called.
+2021-02-04 21:09:24,907 - db - INFO - Start getting share lock.
+2021-02-04 21:09:32,334 - db - INFO - getUser method is called.
+2021-02-04 21:09:32,334 - db - INFO - Start getting share lock.
+2021-02-04 21:09:32,342 - db - INFO - getUser method is called.
+2021-02-04 21:09:32,342 - db - INFO - Start getting share lock.
