@@ -31,7 +31,13 @@ def redirect_home():
 # Showing the cart page.
 @app.route("/cart", methods=["GET"])
 def cart():
-    return render_template("shoppingcart.html",name=None)
+    return render_template("shoppingcart.html", name=None)
+    
+
+# Showing the checkout page.
+@app.route("/checkout_page", methods=["GET"])
+def checkout_page():
+    return render_template("checkut.html",name=None)
 
 """
 ------------------------- user account operation -----------------------

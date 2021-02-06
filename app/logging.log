@@ -1,0 +1,8 @@
+2021-02-06 01:01:14,017 - db - INFO - getAllProducts methods i2021-02-06 01:01:14,675 - __main__ - INFO - Find all products.
+2021-02-06 01:01:14,777 - __main__ - INFO - Find all products.
+2021-02-06 01:01:22,042 - __main__ - INFO - render home page
+2021-02-06 01:11:52,089 - __main__ - INFO - render home page
+2021-02-06 01:11:54,316 - __main__ - INFO - render home page
+- start getting share lock.
+2021-02-06 01:01:14,751 - db - INFO - finish getting share lock.
+2021-02-06 01:01:14,777 - db - INFO - Find all items from DB.
