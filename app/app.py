@@ -27,6 +27,18 @@ def redirect_home():
     logger.info('render home page')
     return render_template("index.html",name=None)
 
+
+# Showing the cart page.
+@app.route("/cart", methods=["GET"])
+def cart():
+    return render_template("shoppingcart.html", name=None)
+    
+
+# Showing the checkout page.
+@app.route("/checkout_page", methods=["GET"])
+def checkout_page():
+    return render_template("checkut.html",name=None)
+
 """
 ------------------------- user account operation -----------------------
 """
@@ -161,6 +173,7 @@ def findUserPrefix():
 ----------------- product section -----------------------------
 """
 
+## return array of json objects to frontend.
 @app.route("/allProducts",methods=['GET'])
 def getAllProducts():
     items = db.getAllProducts()
@@ -328,11 +341,6 @@ def listPhone():
 def hello_world():
     print("hello world")
     return 'hello, world!'
-
-
-# @app.route("/search", methods=["GET"])
-# def redirect_search():
-#     return render_template("search.html",name=None)
 
 if __name__ == "__main__":
     webbrowser.open_new("localhost:8080")

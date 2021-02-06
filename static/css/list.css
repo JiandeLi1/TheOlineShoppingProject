@@ -72,6 +72,15 @@
 
 }
 
+.phone_box ul li .small_box .price .the_price{
+    font-size: 16px;
+    font-weight: 600;
+    color:#4f96f3;
+    text-decoration:none;
+    
+
+}
+
 .phone_box ul li .small_box .price .sold_percen{
  text-decoration:none;   
 }

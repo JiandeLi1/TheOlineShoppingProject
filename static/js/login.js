@@ -11,8 +11,12 @@ window.addEventListener('load', function () {
 		xhr.send("userName=" + input_username + "&passWord=" + input_password);
 		xhr.onreadystatechange = function () {
 			if (xhr.readyState == 4 && xhr.status == 200) {
+				let user = localStorage.getItem('user') ? localStorage.removeItem('user') :input_username;
+				localStorage.setItem('user', input_username);
+						
 				var res = JSON.parse(xhr.responseText);
 				if (res.status == 'success') {
+					// document.cookie = "userName" + input_username;
 					alert("Login successful.");
 					window.location.href = res.redirctUrl;
 				}

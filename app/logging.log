@@ -1,40 +1,45 @@
-2021-02-04 18:59:56,634 - db - INFO - findProductsByPortion method is called.
-2021-02-04 18:59:56,634 - db - INFO - Start getting share lock.
-2021-02-04 18:59:57,017 - db - INFO - finished getting share lock.
-2021-02-04 18:59:57,017 - db - INFO - Find items suc2021-02-04 19:00:00,288 - 2021-02-04 19:00:00,289 - db - INFO - f2021-02-04 19:00:01,930 - __main__ - INFO - search product page.
-2021-02-04 19:00:25,684 - __main__ - INFO - search product page.
-2021-02-04 19:00:31,096 - __main__ - INFO - render home page
-2021-02-04 19:00:39,313 - __main__ - INFO - search product page.
-2021-02-04 19:00:43,087 - __main__ - INFO - search product page.
-2021-02-04 19:00:51,181 - __main__ - INFO - search product page.
-2021-02-04 19:00:51,181 - __main__ - INFO - No valid paramater found.
-2021-02-04 19:04:00,564 - __main__ - INFO - search product page.
-2021-02-04 19:04:31,064 - __main__ - INFO - search product page.
-2021-02-04 19:08:42,541 - __main__ - INFO - search product page.
-2021-02-04 19:11:58,899 - __main__ - INFO - search product page.
-inished getting share lock.
-2021-02-04 19:00:25,833 - db - INFO - Find items success, now return results.
-2021-02-04 19:00:39,314 - db - INFO - findProductsByPortion method is called.
-2021-02-04 19:00:39,314 - db - INFO - Start getting share lock.
-2021-02-04 19:00:39,352 - db - INFO - finished getting share lock.
-2021-02-04 19:00:39,352 - db - INFO - Find items success, now return results.
-2021-02-04 19:00:43,088 - db - INFO - findProductsByPortion method is called.
-2021-02-04 19:00:43,088 - db - INFO - Start getting share lock.
-2021-02-04 19:00:43,123 - db - INFO - finished getting share lock.
-2021-02-04 19:00:43,123 - db - INFO - Find items success, now return results.
-2021-02-04 19:04:00,564 - db - INFO - findProductsByPortion method is called.
-2021-02-04 19:04:00,564 - db - INFO - Start getting share lock.
-2021-02-04 19:04:00,730 - db - INFO - finished getting share lock.
-2021-02-04 19:04:00,730 - db - INFO - Find items success, now return results.
-2021-02-04 19:04:31,064 - db - INFO - findProductsByPortion method is called.
-2021-02-04 19:04:31,064 - db - INFO - Start getting share lock.
-2021-02-04 19:04:31,172 - db - INFO - finished getting share lock.
-2021-02-04 19:04:31,172 - db - INFO - Find items success, now return results.
-2021-02-04 19:08:42,541 - db - INFO - findProductsByPortion method is called.
-2021-02-04 19:08:42,541 - db - INFO - Start getting share lock.
-2021-02-04 19:08:42,578 - db - INFO - finished getting share lock.
-2021-02-04 19:08:42,578 - db - INFO - Find items success, now return results.
-2021-02-04 19:11:58,899 - db - INFO - findProductsByPortion method is called.
-2021-02-04 19:11:58,899 - db - INFO - Start getting share lock.
-2021-02-04 19:11:58,940 - db - INFO - finished getting share lock.
-2021-02-04 19:11:58,940 - db - INFO - Find items success, now return results.
+2021-02-06 11:48:43,336 - db - INFO - findProductsByPortion method is called.
+2021-02-06 11:48:43,336 - db - INFO - Start getting share lock.
+2021-02-06 11:48:43,900 - db - INFO - finished getting share lock.
+2021-02-06 11:48:43,901 - db - INFO - Find items success, now return results.
+2021-02-06 11:48:46,040 - db - INFO - findProductsByPortion method is called.
+2021-02-06 11:48:46,040 - db - INFO - Start getting share lock.
+2021-02-06 11:48:462021-02-06 11:48:50,738 - __main__ - INFO - Find all products.
+2021-02-06 11:48:50,793 - __main__ - INFO - Find all products.
+2021-02-06 11:49:01,210 - __main__ - INFO - search product page.
+2021-02-06 11:50:37,485 - __main__ - INFO - search product page.
+2021-02-06 11:51:13,077 - __main__ - INFO - render home page
+2021-02-06 11:51:13,226 - __main__ - INFO - render home page
+2021-02-06 11:51:13,335 - __main__ - INFO - render home page
+2021-02-06 11:51:19,059 - __main__ - INFO - search product page.
+2021-02-06 11:52:53,038 - __main__ - INFO - search product page.
+2021-02-06 11:52:53,042 - __main__ - INFO - search product page.
+2021-02-06 11:52:53,042 - __main__ - INFO - No valid paramater found.
+2021-02-06 11:52:55,564 - __main__ - INFO - Find all products.
+2021-02-06 11:52:55,616 - __main__ - INFO - Find all products.
+2021-02-06 11:53:04,269 - __main__ - INFO - username : xiaojun, password : 123456
+2021-02-06 11:53:04,273 - __main__ - INFO - username : xiaojun, password : 123456
+2021-02-06 11:53:04,332 - __main__ - INFO - username : xiaojun password is match.
+2021-02-06 11:53:04,332 - __main__ - INFO - username : xiaojun password is match.
+2021-02-06 11:53:05,516 - __main__ - INFO - render home page
+sults.
+2021-02-06 11:51:19,059 - db - INFO - findProductsByPortion method is called.
+2021-02-06 11:51:19,059 - db - INFO - Start getting share lock.
+2021-02-06 11:51:19,096 - db - INFO - finished getting share lock.
+2021-02-06 11:51:19,096 - db - INFO - Find items success, now return results.
+2021-02-06 11:52:53,038 - db - INFO - findProductsByPortion method is called.
+2021-02-06 11:52:53,038 - db - INFO - Start getting share lock.
+2021-02-06 11:52:53,193 - db - INFO - finished getting share lock.
+2021-02-06 11:52:53,193 - db - INFO - Find items success, now return results.
+2021-02-06 11:52:55,346 - db - INFO - getAllProducts methods is called.
+2021-02-06 11:52:55,346 - db - INFO - start getting share lock.
+2021-02-06 11:52:55,546 - db - INFO - finish getting share lock.
+2021-02-06 11:52:55,564 - db - INFO - Find all items from DB.
+2021-02-06 11:52:55,566 - db - INFO - getAllProducts methods is called.
+2021-02-06 11:52:55,566 - db - INFO - start getting share lock.
+2021-02-06 11:52:55,599 - db - INFO - finish getting share lock.
+2021-02-06 11:52:55,615 - db - INFO - Find all items from DB.
+2021-02-06 11:53:04,269 - db - INFO - getUser method is called.
+2021-02-06 11:53:04,269 - db - INFO - Start getting share lock.
+2021-02-06 11:53:04,273 - db - INFO - getUser method is called.
+2021-02-06 11:53:04,273 - db - INFO - Start getting share lock.

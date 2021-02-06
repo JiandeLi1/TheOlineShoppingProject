@@ -91,7 +91,7 @@
     }
     .shoppingCart .ctrl a:hover {
         color: #FFF;
-        background: #ff6700;
+        background: #62a2f5;
         border-radius: 50%;
     }
     .head_row {
@@ -204,4 +204,9 @@
     .i_acity2 {
         border-color: #ff6700 !important;
         background-color: #ff6700 !important;
+    }
+
+
+    #list{
+        display: flex
     }
