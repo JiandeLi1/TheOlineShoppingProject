@@ -27,6 +27,12 @@ def redirect_home():
     logger.info('render home page')
     return render_template("index.html",name=None)
 
+
+# Showing the cart page.
+@app.route("/cart", methods=["GET"])
+def cart():
+    return render_template("shoppingcart.html",name=None)
+
 """
 ------------------------- user account operation -----------------------
 """

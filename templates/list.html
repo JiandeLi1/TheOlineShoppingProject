@@ -20,6 +20,7 @@
     <script src="/static/js/Shopping.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="{{ url_for('static',filename='js/show_id.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/buy.js') }}"></script>
 </head>
 <body>
     <!-- <div class="slider_bar">
@@ -98,12 +99,13 @@
                 <a href="javascript:;">iPhone12ProCase</a>
             </div>
         
-            <div class="shopCar">
-                <i class="fas fa-shopping-cart style_bule"></i>
-                <a href="/templates/shoppingcart.html">My Shopping Cart</a>
-               
-                <i class="count">9</i>
-            </div>
+            <a href="/cart">
+                <div class="shopCar">
+                    <i class="fas fa-shopping-cart style_bule"></i>
+                    My Shopping Cart
+                    <i class="count">9</i>
+                </div>
+            </a>
         </header>
         
         <nav class="nav">

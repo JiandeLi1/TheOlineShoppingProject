@@ -5,22 +5,28 @@ var cart = document.querySelector(".shoppingCart ul");
 // li.innerHTML += localStorage.getItem('count');
 // console.log(li);
     
-    var data = JSON.parse(localStorage.getItem('count'));
-    var arr = data;
-    console.log(arr);
-    console.log(arr.price);
-    console.log(typeof(arr));
+    var arr = JSON.parse(localStorage.getItem('products'));
+    var  data= arr.filter((arr, index, self) =>
+    index === self.findIndex((t) => (t.Name === arr.Name && t.price === arr.price)))
+    localStorage.setItem('products', JSON.stringify(data));
+    console.log(data);
+    // var arr = data;
+    // console.log(arr);
+    // console.log(arr.price);
+    // console.log(typeof(arr));
 
     var oDiv = document.createElement("div");
-                        
-                        oDiv.className = "row hid";
-                        oDiv.innerHTML += '<div class="check left"> <i class="i_check" id="i_check" onclick="i_check()" >√</i></div>';
-                        oDiv.innerHTML += '<div class="img left"><img src="'  + '" width="80" height="80"></div>';
-                        oDiv.innerHTML += '<div class="name left"><span>' + arr.Name + '</span></div>';
-                        oDiv.innerHTML += '<div class="price left"><span>' +  arr.price + '</span></div>';
-                        oDiv.innerHTML +=' <div class="item_count_i"><div class="num_count"><div class="count_d">-</div><div class="c_num">'+arr.amount+'</div><div class="count_i">+</div></div> </div>'
-                        oDiv.innerHTML += '<div class="subtotal left sub_price"><span>' + arr.price*arr.amount + '</span></div>'
-                        oDiv.innerHTML += '<div class="ctrl left"><a href="javascript:;">×</a></div>';
+
+    data.forEach((item) => {
+        oDiv.className = "row hid";
+        oDiv.innerHTML += '<div class="check left"> <i class="i_check" id="i_check" onclick="i_check()" >√</i></div>';
+        oDiv.innerHTML += '<div class="img left"><img src="' + '" width="80" height="80"></div>';
+        oDiv.innerHTML += '<div class="name left"><span>' + item.Name + '</span></div>';
+        oDiv.innerHTML += '<div class="price left"><span>' + item.price + '</span></div>';
+        oDiv.innerHTML += ' <div class="item_count_i"><div class="num_count"><div class="count_d">-</div><div class="c_num">' + item.amount + '</div><div class="count_i">+</div></div> </div>'
+        oDiv.innerHTML += '<div class="subtotal left sub_price"><span>' + item.price * item.amount + '</span></div>'
+        oDiv.innerHTML += '<div class="ctrl left"><a href="javascript:;">×</a></div>';
+    })
     cart.appendChild(oDiv);
     getAmount();
     //   window.addEventListener('storage', function (event) {

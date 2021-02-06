@@ -3,6 +3,7 @@ window.addEventListener('load', function () {
     var product = search.querySelector('input');
     var btn = search.querySelector('.submitbtn');
     console.log(product.value);
+    
     btn.addEventListener('click', function () {
         var xhr = new XMLHttpRequest();
         xhr.open("POST", "/searchProduct");
@@ -13,9 +14,9 @@ window.addEventListener('load', function () {
                 var res = xhr.responseText;
                 
                 if (res != null) {
-                    let search = localStorage.getItem('search') ? localStorage.removeItem('search') : 0;
+                    var search = localStorage.getItem('search') ? localStorage.removeItem('search') : 0;
                 
-                    localStorage.setItem('search', (product.value+":"+res))
+                    localStorage.setItem('search', res)
                     // localStorage.setItem('search', res);
                     console.log(localStorage.getItem('search'));
                     window.location.href = "/search";
@@ -36,4 +37,16 @@ window.addEventListener('load', function () {
         }
         return false;
     })
+
+
+
+     document.addEventListener('keydown', function (e) { 
+        if (e.key === "Enter") {
+            btn.click();
+        }
+        else { 
+            return false;
+        }
+    })
+
 })

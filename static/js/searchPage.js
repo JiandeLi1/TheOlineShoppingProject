@@ -11,22 +11,21 @@ window.addEventListener('load', function () {
     if (res != '<h1 style="font-size:20px;">No result</h1>') {
 
 // <<<<<<< HEAD
-       
-          var ar = res.split(","); 
-          var product = '<ul>';
-
+        // res = JSON.parse(res);
+        
+        res = JSON.parse(res);
           // if (ar.length > 4) {
           //   for (let b = 3; b < ar.length; b++) { 
           //     ar[2] += ar[b];
           //   }
           // }
+ 
+        console.log(res);
+        product = "<ul>";
 
-
-          console.log(ar);
-          console.log(ar[3]);
-           console.log(ar[3].substring(17, ar[3].length-1));
-
-          product = "<li><div class='small_box'><img src='" + ar[4].substring(18, ar[4].length-3) + " ' alt=''><p>" + ar[1].substring(23, ar[1].length - 1) + "</p><div class='price'>$" + ar[2].substring(9) + "<span>$" + (parseInt( ar[2].substring(9)) + 100) + "</span><div class='sold'><span class='sold_percen'>Sold " + ar[3].substring(10) + "%</span><span class='bar'><div></div></span><span class='sold_percen'>" + (100 - parseInt(ar[3].substring(10))) + " left</span></div><button class='buy_product'><a href='javascript:;'>Buy Now!</a></button></div></li>"
+        res.forEach((item) => {
+        product += "<li><div class='small_box'><img src='" + item.itemImageUrl + " ' alt=''><p>" + item.itemName + "</p><div class='price'>$" + item.price + "<span>$" + (item.price + 100.00) + "</span><div class='sold'><span class='sold_percen'>Sold " + item.amount + "%</span><span class='bar'><div></div></span><span class='sold_percen'>" + (100 - item.amount) + " left</span></div><button class='buy_product'><a href='javascript:;'>Buy Now!</a></button></div></li>"
+         })
           
           
         product += "</ul>";

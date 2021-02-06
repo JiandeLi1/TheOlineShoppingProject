@@ -1,7 +1,4 @@
 window.addEventListener('load', function () {
-// <<<<<<< HEAD
-
-
 		var phone_box = document.querySelector(".phone_box");
 			
 		var xhr = new XMLHttpRequest();
@@ -33,7 +30,7 @@ window.addEventListener('load', function () {
       //   }
       // }
       res.forEach((item) => {
-        product += "<li><div class='small_box'><img src='" + item.itemImageUrl + " ' alt=''><p>" + item.itemName + "</p><div class='price'>$" + item.price + "<span>$" + (item.price + 100.00) + "</span><div class='sold'><span class='sold_percen'>Sold " + item.amount + "%</span><span class='bar'><div></div></span><span class='sold_percen'>" + (100 - item.amount) + " left</span></div><button class='buy_product'><a href='javascript:;'>Buy Now!</a></button></div></li>"
+        product += "<li><div class='small_box'><img class='i_photo' src='" + item.itemImageUrl + " ' alt=''><p class='i_name'>" + item.itemName + "</p><div class='price'>$<span class='the_price'>" + item.price + "</span><span>$" + (item.price + 100.00) + "</span><div class='sold'><span class='sold_percen'>Sold " + item.amount + "%</span><span class='bar'><div></div></span><span class='sold_percen i_amount'>" + (100 - item.amount) + " left</span></div><button class='buy_product'><a href='javascript:;'>Buy Now!</a></button></div></li>"
       })
 
 
@@ -251,22 +248,54 @@ window.addEventListener('load', function () {
   //   console.log("gg");
   //   }
 
-   
+  // var buybtn = document.getElementsByClassName('buy_product');
+  // var i_photo = document.querySelectorAll(".small_box img");
+  // var i_name = document.querySelectorAll("small_box p");
+  // var i_price = document.getElementsByClassName("the_price");
+  // var i_amount = document.getElementsByClassName("sold_percen");
 
-    function count(flag) {
-      let count = localStorage.getItem('count')?JSON.parse(localStorage.getItem('count')).count:0;
+
+  //   // function count(flag) {
+  //   //   let count = localStorage.getItem('products')?JSON.parse(localStorage.getItem('products')).count:0;
       
-      let countObj = {
-          Name: "iphone",
-          price: 1200,
-          amount: 1
-      }
       
-        localStorage.setItem('count', JSON.stringify(countObj))
-        console.log(localStorage.getItem('count'));
-    }
       
-  
+  //   //     localStorage.setItem('count', JSON.stringify(countObj))
+  //   //     console.log(localStorage.getItem('count'));
+  //   // }
+      
+  // for (var i = 0; i < buybtn.length; i++) {
+  //     (function (i) {
+  //       buybtn[i].onclick = function () {
+  //         console.log('It')
+  //         let p;
+  //         if (localStorage.getItem('products'))
+  //         {
+  //           p=JSON.parse(localStorage.getItem('products'))
+  //         }
+          
+
+  //         let Obj = {
+  //         Name: i_name[i],
+  //         price: i_price[i],
+  //         amount: i_amount[i],
+  //         img: i_photo[i]
+  //         }
+
+  //         p.push(Obj);
+  //         p.forEach((item) => {
+  //           if (i_name[i] == item.Name) { 
+  //             return;
+  //           }
+  //          })
+        
+  //         localStorage.setItem('product', JSON.stringify(p))
+  //         console.log(localStorage.getItem('product'));
+         
+  //       }
+  //     })(i)
+
+  //   }
   
   
   
