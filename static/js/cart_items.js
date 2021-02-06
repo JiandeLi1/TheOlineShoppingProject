@@ -9,6 +9,6 @@ window.addEventListener('load', () => {
         item_count.innerHTML = counter;
     } else { 
          item_count.style.display = 'none';
-        item_count.innerHTML = '';
+         item_count.innerHTML = '';
     }
 })

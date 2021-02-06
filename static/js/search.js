@@ -15,8 +15,7 @@ window.addEventListener('load', function () {
                 
                 if (res != null) {
                     var search = localStorage.getItem('search') ? localStorage.removeItem('search') : 0;
-                
-                    localStorage.setItem('search', res)
+                    localStorage.setItem('search', res);
                     // localStorage.setItem('search', res);
                     console.log(localStorage.getItem('search'));
                     window.location.href = "/search";
@@ -24,14 +23,14 @@ window.addEventListener('load', function () {
                 else {
                     let search = localStorage.getItem('search') ? localStorage.removeItem('search') : 0;
                     var li = '<ul><li><h1>No result</h1></li></ul>';
-                    localStorage.setItem('search', li)
+                    localStorage.setItem('search', li);
                      window.location.href = "/search";
 				}
             }
             else {
                     let search = localStorage.getItem('search') ? localStorage.removeItem('search') : 0;
                     var li = '<h1 style="font-size:20px;">No result</h1>';
-                    localStorage.setItem('search', li)
+                localStorage.setItem('search', li);
                      window.location.href = "/search";
                 }
         }

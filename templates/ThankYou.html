@@ -13,6 +13,7 @@
     <!-- <script src="/static/js/cart.js"></script> -->
     <script src="{{ url_for('static',filename='js/ThankYou.js') }}"></script>
     <script src="{{ url_for('static',filename='js/show_id.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/cart_items.js') }}"></script>
     
     
     
@@ -22,8 +23,8 @@
     <link rel="stylesheet" href="/static/css/common.css">
     
     <link rel="stylesheet" href="/static/css/ThankYou.css">
-    <script src="/static/js/ThankYou.js"></script>
-    
+    <!-- <script src="/static/js/ThankYou.js"></script>
+     -->
     </head>
     
     <body>
@@ -94,11 +95,13 @@
                 <a href="javascript:;">iPhone12ProCase</a>
             </div>
     
-            <div class="shopCar">
-                <i class="fas fa-shopping-cart style_bule"></i>
-                My Shopping Cart
-                <i class="count">9</i>
-            </div>
+            <a href="/cart">
+                <div class="shopCar">
+                    <i class="fas fa-shopping-cart style_bule"></i>
+                    My Shopping Cart
+                    <i class="count">9</i>
+                </div>
+            </a>
         </header>
     
         <nav class="nav">
@@ -143,7 +146,7 @@
                 <div class="shoppingCart w">
                     <div class="head_row hid">
                         
-                        <div class="img left"> img</div>
+                        <div class="img left"> image</div>
                         <div class="name left">item</div>
                         <div class="price left">price</div>
                         <div class='left' style="padding: 0 40px 0 0;">amount</div>

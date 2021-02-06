@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="{{ url_for('static',filename='css/index.css') }}">
     <link rel="stylesheet" href="{{ url_for('static',filename='css/checkout.css') }}">
     <script src="{{ url_for('static',filename='js/checkout.js') }}"></script>
-    <script src="/static/js/checkout.js"></script>
+    <script src="{{ url_for('static',filename='js/cart_items.js') }}"></script>
     <script src="{{ url_for('static',filename='js/show_id.js') }}"></script>
 </head>
 <body>
@@ -96,11 +96,13 @@
                 <a href="javascript:;">iPhone12ProCase</a>
             </div>
         
-            <div class="shopCar">
-                <i class="fas fa-shopping-cart style_bule"></i>
-                My Shopping Cart
-                <i class="count">9</i>
-            </div>
+            <a href="/cart">
+                <div class="shopCar">
+                    <i class="fas fa-shopping-cart style_bule"></i>
+                    My Shopping Cart
+                    <i class="count">9</i>
+                </div>
+            </a>
         </header>
         
         <nav class="nav">
@@ -116,7 +118,11 @@
             </div>
         </nav>
         <div class="checkOutForm w">
-            <form action="">
+            <form 
+                name='thankyou'
+                action="/thankyou"
+                method="post"
+                enctype="multipart/form-data">
             <h1>Billing address</h1>
             <div class="form">
                 <div class="name section">
@@ -255,10 +261,11 @@
                     </div>
                     
                 </div>
+                <hr style="margin-top: 10px;">
+                <button id="check-out" type="submit">Continue to checkout</button>
             </form>
         </div>
-        <hr style="margin-top: 10px;">
-        <button id="check-out">Continue to checkout</button>
+        
     </div>
     <footer class="footer">
         <div class="w">
