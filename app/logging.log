@@ -38,4 +38,20 @@
 2021-02-06 18:40:57,050 - __main__ - INFO - render home page
 2021-02-06 18:41:39,610 - __main__ - INFO - render home page
 2021-02-06 18:42:13,434 - __main__ - INFO - render home page
-16,926 - db - INFO - Find all items from DB.
+2021-02-06 18:48:21,957 - __main__ - INFO - re2021-02-06 18:512021-02-06 18:51:23,782 - __main__ - INFO - Find all products.
+2021-02-06 18:51:23,932 - __main__ - INFO - Find all products.
+2021-02-06 18:51:43,411 - __main__ - INFO - render home page
+2021-02-06 18:51:58,795 - __main__ - INFO - render home page
+2021-02-06 18:52:13,686 - __main__ - INFO - Find all products.
+2021-02-06 18:52:14,097 - __main__ - INFO - Find all products.
+e lock.
+2021-02-06 18:51:23,898 - db - INFO - finish getting share lock.
+2021-02-06 18:51:23,932 - db - INFO - Find all items from DB.
+2021-02-06 18:52:13,587 - db - INFO - getAllProducts methods is called.
+2021-02-06 18:52:13,587 - db - INFO - start getting share lock.
+2021-02-06 18:52:13,658 - db - INFO - finish getting share lock.
+2021-02-06 18:52:13,685 - db - INFO - Find all items from DB.
+2021-02-06 18:52:13,996 - db - INFO - getAllProducts methods is called.
+2021-02-06 18:52:13,997 - db - INFO - start getting share lock.
+2021-02-06 18:52:14,072 - db - INFO - finish getting share lock.
+2021-02-06 18:52:14,097 - db - INFO - Find all items from DB.
