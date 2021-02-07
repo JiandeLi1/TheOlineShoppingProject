@@ -14,7 +14,7 @@
         width: 18px;
         height: 18px;
         line-height: 18px;
-        border: 1px solid #e0e0e0;
+        /* border: 1px solid #e0e0e0; */
         margin-left: 24px;
         background-color: #fff;
         font-size: 16px;
@@ -120,6 +120,7 @@
         color: #fff;
         font-weight: 600;
         background-color: #62a2f5;
+        cursor: pointer;
     }
 
      #sum_area #pay_amout{
@@ -209,4 +210,9 @@
 
     #list{
         display: flex
+    }
+
+    .delete{
+        float: left;
+        margin: 30px 10px 0px 10px;
     }

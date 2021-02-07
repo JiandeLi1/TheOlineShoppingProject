@@ -21,7 +21,7 @@ window.addEventListener('load', function () {
         console.log(data.length);
         var oDiv = document.createElement("div");
         oDiv.className = "row hid";
-        oDiv.innerHTML += '<div class="check left"> <i class="i_check" id="i_check" onclick="i_check()" >√</i></div>';
+        oDiv.innerHTML += '<div class="check left"> <i class="i_check"><input type="checkbox" /></i></div>';
         oDiv.innerHTML += '<div class="img left"><img src="' + item.img + '" width="80" height="80"></div>';
         oDiv.innerHTML += '<div class="name left"><span>' + item.Name + '</span></div>';
         oDiv.innerHTML += '<div class="price left"><span>' + item.price + '</span></div>';
@@ -93,40 +93,78 @@ window.addEventListener('load', function () {
     // var cart_list=document.querySelectorAll('#list ul li');
     for (let i = 0; i < delBtn.length; i++) {
         delBtn[i].onclick = function () {
-            var result = confirm("Delete?");
+            //var result = confirm("Delete?");
             // let b = cart_list.childNodes[i];
-            
             //cart_list.removeChild(delBtn[i].parentElement);
-            if (result) {
+            //if (result) {
                 let a = JSON.parse(localStorage.getItem("products"));
-                let b = delBtn[i].parentElemen;
+                //let b = delBtn[i].parentElemen;
                 a.splice(i, 1);
                 localStorage.setItem('products', JSON.stringify(a));
-                cart.removeChild(cart.childNodes[i]);
+                console.log(cart.children[i]);
+                cart.removeChild(cart.children[i]);
+            getAmount();
+            renew_list()
+               
+            //}
+        }
+    }
+
+    function renew_list() {
+        var delBtn = document.querySelectorAll('.ctrl a');
+        for (let i = 0; i < delBtn.length; i++) {
+            delBtn[i].onclick = function () {
+                let a = JSON.parse(localStorage.getItem("products"));
+                //let b = delBtn[i].parentElemen;
+                a.splice(i, 1);
+                localStorage.setItem('products', JSON.stringify(a));
+                console.log(cart.children[i]);
+                cart.removeChild(cart.children[i]);
                 getAmount();
+                renew_list();
             }
         }
     }
     
+    
 
-    // var index = false;
-    //         function checkAll() {
-    //             var choose = document.getElementsByClassName("shoppingCart")[0].getElementsByTagName("i");
-    //             // console.log(choose);
-    //             if (choose.length != 1) {
-    //                 for (i = 1; i < choose.length; i++) {
-    //                     if (!index) {
-    //                         choose[0].classList.add("i_acity2")
-    //                         choose[i].classList.add("i_acity");
-    //                     } else {
-    //                         choose[i].classList.remove("i_acity");
-    //                         choose[0].classList.remove("i_acity2")
-    //                     }
-    //                 }
-    //                 index = !index;
-    //             }
-    //             getAmount();
-    // }
+    //var index = false;
+    var choose = document.querySelector('#checkAll input');
+    var sub_check=document.querySelectorAll('.i_check input');
+    choose.addEventListener('click', () => {
+        console.log(sub_check);
+        console.log(choose.checked);
+         for (let i=0;i<sub_check.length;i++){
+             sub_check[i].checked = choose.checked;
+             console.log(sub_check.checked);
+        }
+    })
+
+    for (let i = 0; i < sub_check.length; i++) {
+        sub_check[i].onclick = function () {
+            var flag = true;
+            for (let i = 0; i < sub_check.length; i++) {
+                
+                if (!sub_check[i].checked) {
+                    flag = false;
+                    break;
+                }
+            }
+            choose.checked = flag;
+        }
+    }
+
+
+    var del = document.querySelector('.delete');
+    del.addEventListener('click', () => { 
+         for (let i = 0; i < sub_check.length; i++) {
+             if (sub_check[i].checked) {
+                 delBtn[i].click();
+             }
+            }
+    })
+                   
+    
     
 
     // var check = oDiv.firstChild.getElementsByTagName("i")[0];
@@ -172,7 +210,7 @@ window.addEventListener('load', function () {
                 window.location.href = '/checkout_page';
             }
             else { 
-                alert(xhr.responseText);
+                return;
             }
         }
     })

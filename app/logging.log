@@ -1,45 +1,41 @@
-2021-02-06 11:48:43,336 - db - INFO - findProductsByPortion method is called.
-2021-02-06 11:48:43,336 - db - INFO - Start getting share lock.
-2021-02-06 11:48:43,900 - db - INFO - finished getting share lock.
-2021-02-06 11:48:43,901 - db - INFO - Find items success, now return results.
-2021-02-06 11:48:46,040 - db - INFO - findProductsByPortion method is called.
-2021-02-06 11:48:46,040 - db - INFO - Start getting share lock.
-2021-02-06 11:48:462021-02-06 11:48:50,738 - __main__ - INFO - Find all products.
-2021-02-06 11:48:50,793 - __main__ - INFO - Find all products.
-2021-02-06 11:49:01,210 - __main__ - INFO - search product page.
-2021-02-06 11:50:37,485 - __main__ - INFO - search product page.
-2021-02-06 11:51:13,077 - __main__ - INFO - render home page
-2021-02-06 11:51:13,226 - __main__ - INFO - render home page
-2021-02-06 11:51:13,335 - __main__ - INFO - render home page
-2021-02-06 11:51:19,059 - __main__ - INFO - search product page.
-2021-02-06 11:52:53,038 - __main__ - INFO - search product page.
-2021-02-06 11:52:53,042 - __main__ - INFO - search product page.
-2021-02-06 11:52:53,042 - __main__ - INFO - No valid paramater found.
-2021-02-06 11:52:55,564 - __main__ - INFO - Find all products.
-2021-02-06 11:52:55,616 - __main__ - INFO - Find all products.
-2021-02-06 11:53:04,269 - __main__ - INFO - username : xiaojun, password : 123456
-2021-02-06 11:53:04,273 - __main__ - INFO - username : xiaojun, password : 123456
-2021-02-06 11:53:04,332 - __main__ - INFO - username : xiaojun password is match.
-2021-02-06 11:53:04,332 - __main__ - INFO - username : xiaojun password is match.
-2021-02-06 11:53:05,516 - __main__ - INFO - render home page
-sults.
-2021-02-06 11:51:19,059 - db - INFO - findProductsByPortion method is called.
-2021-02-06 11:51:19,059 - db - INFO - Start getting share lock.
-2021-02-06 11:51:19,096 - db - INFO - finished getting share lock.
-2021-02-06 11:51:19,096 - db - INFO - Find items success, now return results.
-2021-02-06 11:52:53,038 - db - INFO - findProductsByPortion method is called.
-2021-02-06 11:52:53,038 - db - INFO - Start getting share lock.
-2021-02-06 11:52:53,193 - db - INFO - finished getting share lock.
-2021-02-06 11:52:53,193 - db - INFO - Find items success, now return results.
-2021-02-06 11:52:55,346 - db - INFO - getAllProducts methods is called.
-2021-02-06 11:52:55,346 - db - INFO - start getting share lock.
-2021-02-06 11:52:55,546 - db - INFO - finish getting share lock.
-2021-02-06 11:52:55,564 - db - INFO - Find all items from DB.
-2021-02-06 11:52:55,566 - db - INFO - getAllProducts methods is called.
-2021-02-06 11:52:55,566 - db - INFO - start getting share lock.
-2021-02-06 11:52:55,599 - db - INFO - finish getting share lock.
-2021-02-06 11:52:55,615 - db - INFO - Find all items from DB.
-2021-02-06 11:53:04,269 - db - INFO - getUser method is called.
-2021-02-06 11:53:04,269 - db - INFO - Start getting share lock.
-2021-02-06 11:53:04,273 - db - INFO - getUser method is called.
-2021-02-06 11:53:04,273 - db - INFO - Start getting share lock.
+2021-02-06 17:28:46,378 - db - INFO - getAllProducts methods is called.
+2021-02-06 17:28:46,378 - db - INFO - start getting share lock.
+2021-02-06 17:28:46,932 - db - INFO - finish getting share lock.
+2021-02-06 17:28:46,959 - db - INFO - Find a2021-02-06 17:28:462021-02-06 17:28:46,962 - db - INFO - getAllP2021-02-06 17:28:47,047 - __main__ - INFO - Find all products.
+2021-02-06 17:33:31,189 - __main__ - INFO - render home page
+2021-02-06 17:33:33,644 - __main__ - INFO - Find all products.
+2021-02-06 17:33:34,046 - __main__ - INFO - Find all products.
+2021-02-06 17:42:51,733 - __main__ - INFO - render home page
+2021-02-06 17:42:55,629 - __main__ - INFO - Find all products.
+2021-02-06 17:42:56,062 - __main__ - INFO - Find all products.
+2021-02-06 17:43:37,042 - __main__ - INFO - render home page
+2021-02-06 17:43:40,044 - __main__ - INFO - Find all products.
+2021-02-06 17:43:40,434 - __main__ - INFO - Find all products.
+2021-02-06 17:47:11,192 - __main__ - INFO - render home page
+2021-02-06 17:47:16,528 - __main__ - INFO - Find all products.
+2021-02-06 17:47:16,926 - __main__ - INFO - Find all products.
+2021-02-06 18:19:20,168 - __main__ - INFO - render home page
+2021-02-06 18:19:28,296 - __main__ - INFO - render home page
+2021-02-06 18:19:41,434 - __main__ - INFO - render home page
+2021-02-06 18:19:49,152 - __main__ - INFO - render home page
+2021-02-06 18:19:57,553 - __main__ - INFO - render home page
+2021-02-06 18:22:16,346 - __main__ - INFO - render home page
+2021-02-06 18:22:30,911 - __main__ - INFO - render home page
+2021-02-06 18:25:27,811 - __main__ - INFO - render home page
+2021-02-06 18:25:43,299 - __main__ - INFO - render home page
+2021-02-06 18:26:31,326 - __main__ - INFO - render home page
+2021-02-06 18:33:06,981 - __main__ - INFO - render home page
+2021-02-06 18:33:23,914 - __main__ - INFO - render home page
+2021-02-06 18:33:49,987 - __main__ - INFO - render home page
+2021-02-06 18:34:00,841 - __main__ - INFO - render home page
+2021-02-06 18:34:10,619 - __main__ - INFO - render home page
+2021-02-06 18:34:20,776 - __main__ - INFO - render home page
+2021-02-06 18:34:28,904 - __main__ - INFO - render home page
+2021-02-06 18:35:24,240 - __main__ - INFO - render home page
+2021-02-06 18:36:12,844 - __main__ - INFO - render home page
+2021-02-06 18:36:34,912 - __main__ - INFO - render home page
+2021-02-06 18:36:59,346 - __main__ - INFO - render home page
+2021-02-06 18:40:57,050 - __main__ - INFO - render home page
+2021-02-06 18:41:39,610 - __main__ - INFO - render home page
+2021-02-06 18:42:13,434 - __main__ - INFO - render home page
+16,926 - db - INFO - Find all items from DB.

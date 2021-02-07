@@ -39,6 +39,19 @@ def cart():
 def checkout_page():
     return render_template("checkut.html",name=None)
 
+# Showing the thankyou page.
+@app.route("/thankyou", methods=["POST"])
+def thankyou():
+    if request.method == 'POST':
+        res = request.form
+        username = res["userName"]
+        user = db.findUser(username)
+
+        if 'error' in user:
+            #logger.warning('username : %s not found.', username)
+            return jsonify({'status' : 'fails',"description" : "Invalid username or password."}), 400
+    return render_template("ThankYou.html",name=None)
+
 """
 ------------------------- user account operation -----------------------
 """
