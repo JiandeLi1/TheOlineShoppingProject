@@ -24,7 +24,7 @@ window.addEventListener('load', function () {
         product = "<ul>";
 
         res.forEach((item) => {
-        product += "<li><div class='small_box'><img src='" + item.itemImageUrl + " ' alt=''><p>" + item.itemName + "</p><div class='price'>$" + item.price + "<span>$" + (item.price + 100.00) + "</span><div class='sold'><span class='sold_percen'>Sold " + item.amount + "%</span><span class='bar'><div></div></span><span class='sold_percen'>" + (100 - item.amount) + " left</span></div><button class='buy_product'><a href='javascript:;'>Buy Now!</a></button></div></li>"
+            product += "<li><div class='small_box'><img src='" + item.itemImageUrl + " ' alt=''><p>" + item.itemName + "</p><div class='price'>$" + item.price + "<span>$" + (item.price + 100.00) + "</span><div class='sold'><span class='sold_percen'>Sold " + item.amount + "%</span><span class='bar'><div></div></span><span class='sold_percen'>" + (100 - item.amount) + " left</span></div><button class='buy_product'><a href='javascript:;'>Buy Now!</a></button></div></li>"
          })
           
           

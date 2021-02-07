@@ -4,12 +4,6 @@ import json
 
 app = Flask(__name__, template_folder="../templates", static_folder = "../static")
 
-# fake_users = {
-#     'xiaoming' : {'email' : 'xiaoming@gmail.com', 'password' : '12456'},
-#     'zhangsan' : {'email' : 'zhangsan@gmail.com','password' : '456123'},
-#     'jiande' : {'email' : 'jiande@gmail.com','password' : '321654'}
-# }
-
 fake_product = {
    'iphone': {'price' : 999.99, 'amount' : 50, 'itemImageUrl' : 'https://m.media-amazon.com/images/I/51m095zShrL._AC_SX466_.jpg'},
   'iphone12':{'price' : 1299.99, 'amount' : 25, 'itemImageUrl' : 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-12-pro-family-hero?wid=940&amp;hei=1112&amp;fmt=jpeg&amp;qlt=80&amp;op_usm=0.5,0.5&amp;.v=1604021663000'}
@@ -78,24 +72,6 @@ fake_purchaseHistory = [
     }
 ]
 
-# fake_purchaseHistory = {
-#     1 : [
-#         {'itemName' : 'iphone',
-#         'amount' : 12,
-#         'totalPrice' : 11999.88,
-#         'itemImageUrl' : 'https://m.media-amazon.com/images/I/51m095zShrL._AC_SX466_.jpg'},
-#         {'itemName' : 'iphone12',
-#         'amount' : 3,
-#         'totalPrice' : 3899.97,
-#         'itemImageUrl' : 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-12-pro-family-hero?wid=940&amp;hei=1112&amp;fmt=jpeg&amp;qlt=80&amp;op_usm=0.5,0.5&amp;.v=1604021663000'}],
-#     2 : [{
-#         'itemName' : 'iphone12',
-#         'amount' : 8,
-#         'totalPrice' : 10399.92,
-#         'itemImageUrl' : 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-12-pro-family-hero?wid=940&amp;hei=1112&amp;fmt=jpeg&amp;qlt=80&amp;op_usm=0.5,0.5&amp;.v=1604021663000'
-#     }]
-# }
-
 # Showing the home page.
 @app.route("/", methods=["GET"])
 def redirect_home():
@@ -136,10 +112,7 @@ def login():
         username = res["userName"]
         password = res["passWord"]
         print(username," ",password)
-# <<<<<<< HEAD
-#         if username in fake_users and fake_users[username]['password'] == password:
-#             return json.dumps({'status' : 'success','username' : username, 'redirctUrl' : '/'}), 200
-# =======
+        
         for user in fake_users:
             if user['userName'] == username and user['passWord'] == password:
                 return json.dumps({'status' : 'success','username' : username, 'redirctUrl' : '/'}), 200
@@ -180,23 +153,13 @@ def checkout():
 
 @app.route("/listProduct",methods=['GET'])
 def listProduct():
-# <<<<<<< HEAD
-#         return json.dumps(fake_product), 200
-# =======
         return json.dumps(fake_products), 200
-        # return json.dumps(fake_product), 200
-
-    # return json.dumsp({'status' : 'fails'}), 404
 
 @app.route("/getProduct",methods=['POST'])
 def getProduct():
     res = request.form
     itemName = res['itemName']
-# <<<<<<< HEAD
-#     if itemName in fake_product:
-#         return json.dumps(fake_product[itemName]), 200
-#     return json.dumps({'status' : 'fails'}), 404
-# =======
+    
     for item in fake_products:
         if item['itemName'] == itemName:
             return json.dumps(item), 200
@@ -220,7 +183,6 @@ def searchProduct():
     return json.dumps(item_list), 200
 
 
-
 """
 Check user's history by username,
 If user is not exist, return username not exist.
@@ -231,18 +193,12 @@ If user exist and has purchase history, return all of them.
 def getHistory():
     res = request.form
     username = res['userName']
-# <<<<<<< HEAD
-#     if username in fake_userIDNameMap:
-#         userID = fake_userIDNameMap[username]
-#     else:
-# =======
     userID = -1
     for user in fake_users:
         if user['userName'] == username:
             userID = user['id']
     
     if userID == -1:
-
         return json.dumps({'status' : 'fails','description' : 'username not found.'}), 404
 
     history_list = []

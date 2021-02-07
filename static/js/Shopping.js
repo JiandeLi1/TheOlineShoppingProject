@@ -91,9 +91,59 @@ window.addEventListener('load', function () {
   //                   </li>
 
 
+      //   console.log(ar);
+      //   console.log(ar[2]);
+      //    console.log(a);
 
+      //   c = "<li><div class='small_box'><img src='" + ar[2].substring(18, ar[2].length - 1) + " ' alt=''><p>" + a[0].substring(2, a[0].length - 1) + "</p><div class='price'>$" + a[2].substring(1) + "<span>$" + (parseInt(a[2].substring(1)) + 100) + "</span><div class='sold'><span class='sold_percen'>Sold " + ar[1].substring(10) + "%</span><span class='bar'><div></div></span><span class='sold_percen'>" + (100 - parseInt(ar[1].substring(10))) + " left</span></div><button class='buy_product'><a href='javascript:;'>Buy Now!</a></button></div></li>"
+      //   product += c;
+      //   }
+      // product += "</ul>";
+      //  console.log(product);
+      // phone_box.innerHTML=product;
 
+  //     /*
+  //     parse return result to json.
+  //     Json is more readable and easier to get key-value pair, like hashmap.
+  //     choose meaningful variable is better.
+  //     */
+  //     var res = JSON.parse(xhr.responseText);
+  //     var products = '<ul>';
 
+  //     res.forEach((item) => {
+  //       let itemName = item.itemName;
+  //       let price = item.price;
+  //       let amount = item.amount;
+  //       let itemImageUrl = item.itemImageUrl;
+  //       products+= "<li><div class='small_box'><img src='" + itemImageUrl + " ' alt=''><p>" + itemName + "</p><div class='price'>$" + price + "<span>$" + (price + 100.00) + "</span><div class='sold'><span class='sold_percen'>Sold " + amount + "%</span><span class='bar'><div></div></span><span class='sold_percen'>" + (100 - amount) + " left</span></div><button class='buy_product'><a href='javascript:;'>Buy Now!</a></button></div></li>"
+  //     });
+  //     products+= "</ul>";
+  //     phone_box.innerHTML=products;
+
+  //     // }
+  //     // else {
+  //     // 	alert(res);
+  //     // }
+  //   }
+  // }
+    
+      // $.ajax({
+      //   type:"post",
+      //   url:"/getProduct",
+      //   dataType:"json",
+      //   success:function(res){
+      //   var str = "<ul>";
+      //   $.each(res.fake_product, function(idx,val) {
+      //     str +="<li><div class='small_box'><img src='{{ url_for"+res[idx].itemImageUrl+" }}' alt=''><p>"+res[idx]+"</p><div class='price'>"+res[idx].price+"<span>$1100</span><div class='sold'><span class='sold_percen'>Sold "+res[idx].amount+"%</span><span class='bar'><div></div></span><span class='sold_percen'>"+100-parseInt(res[idx].amount)+"</span></div><button class='buy_product'><a href='javascript:;'>Buy Now!</a></button></div></li>"
+      //   });
+      //   str += "</ul>";
+      //   $('.phone_box').append(str);
+      //   },error:function(){
+      //   alert(error)
+      //   }
+      // });
+
+    
 
     // var buy = document.querySelector('.buy_product');
     // //  var Car = document.querySelector(".shoppingCart");
